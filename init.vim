@@ -214,6 +214,9 @@ nnoremap <C-k> :TmuxNavigateUp<cr>
 nnoremap <C-l> :TmuxNavigateRight<cr>
 nnoremap <C-a> :TmuxNavigatePrevious<cr>
 
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
 " Debugging
 "let g:syntastic_debug = 1
 "let g:syntastic_debug_file = '~/syntastic.log'
