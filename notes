@@ -1,0 +1,50 @@
+f<char>  move to char
+t<char>  move till char
+; repeat
+, repeat backwards
+
+
+ciw   change word
+
+ip  do anything in p
+
+it  inside of tag
+dst  remove surrounding tag
+
+vsplit filename
+gt go to next tab
+
+how to append comment to lines of different length
+
+cs  change surrounding
+ds  delete surrounding
+ysiw'  surround word with '
+yss"  surround line with "
+yss<p>  surround line with p tag
+
+:e . alternative to NERDTREE
+
+learn vim rails navigation
+:tabm 0 move tab to first postion
+:tabm  move tab to the end
+
+:C-f open history
+
+=ip reformat inside of p
+
+:windo  - do it in all files in window
+:windo e!   undo in all files
+:bufdo   do it in all open buffers
+
+:Greplace plugin to replace in all istances
+
+spend some time with ranges
+
+%  go to mathcing bracket
+gf goes to file under cursor
+C-o goes back
+
+learn vim ctags
+
+TMUX
+prefix z  zoom in window
