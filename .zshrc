@@ -137,7 +137,7 @@ bindkey -s '^G' ' | grep '
 
 # switch between zsh and vim with C-z
 foreground-vi() {
-  fg %vi
+  fg %nvim
 }
 zle -N foreground-vi
 bindkey '^Z' foreground-vi
