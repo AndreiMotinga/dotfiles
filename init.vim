@@ -1,6 +1,11 @@
 call plug#begin()
 
 Plug 'scrooloose/syntastic'
+
+" text object ruby block
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
+
 Plug 'Shougo/deoplete.nvim'
 Plug 'christoomey/vim-tmux-navigator' "vim tmux integration
 Plug 'tpope/vim-endwise'
