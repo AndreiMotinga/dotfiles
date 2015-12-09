@@ -1,6 +1,7 @@
 call plug#begin()
 
 Plug 'scrooloose/syntastic'
+Plug 'Shougo/deoplete.nvim'
 Plug 'christoomey/vim-tmux-navigator' "vim tmux integration
 Plug 'tpope/vim-endwise'
 Plug 'benjaminwhite/Benokai'
@@ -93,6 +94,7 @@ inoremap <leader>w <Esc>:w<CR>
 inoremap <leader>d <Esc>:Dash<CR>
 
 " RSpec.vim mappings
+nnoremap <Leader>e :!rspec<cr>
 nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
@@ -163,7 +165,8 @@ let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'"
 
 " vimrspec
-let g:rspec_command = "!spring rspec --drb {spec}"
+" let g:rspec_command = "!spring rspec --drb {spec}"
+let g:rspec_command = "!rspec --drb {spec}"
 
 " Syntastic
 " ---------
@@ -208,14 +211,17 @@ let g:syntastic_html_tidy_ignore_errors = [
 " vim tmux integration
 let g:tmux_navigator_no_mappings = 1
 
-nnoremap <C-h> :TmuxNavigateLeft<cr>
 nnoremap <C-j> :TmuxNavigateDown<cr>
 nnoremap <C-k> :TmuxNavigateUp<cr>
 nnoremap <C-l> :TmuxNavigateRight<cr>
-nnoremap <C-a> :TmuxNavigatePrevious<cr>
+nnoremap <C-h> :TmuxNavigateLeft<cr>
+" nnoremap <C-a> :TmuxNavigatePrevious<cr>
 
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
 
 " Debugging
 "let g:syntastic_debug = 1
@@ -234,4 +240,5 @@ inoremap ол <Esc>:w<cr>
 iabbrev r require
 iabbrev rr require_relative
 iabbrev cl console.log()
-iabbrev bp binding.pry
+iabbrev bp require 'pry'; binding.pry
+iabbrev init initialize
