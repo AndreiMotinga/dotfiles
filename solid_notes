@@ -1,0 +1,19 @@
+
+     RED   GREEN   REFACTOR
+
+1. is it DRY?
+2. does it have one responsibilty?
+  Each class should do one thing and do it well.
+3. does everything in it change at the same rate?
+4. does it depend on things that chage less often than it does?
+
+
+===    REFACTOR     ===
+
+     ->- Extract ->-
+    |               |
+    |               |
+    Refactor -<- Inject
+
+  Refactor, not because you KNOW  the abstraction,
+    but because you want to find it.
