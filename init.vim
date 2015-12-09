@@ -88,10 +88,7 @@ nnoremap <leader>m :bp<CR>
 nnoremap <leader>c :CtrlPClearCache<CR>
 nnoremap <leader>q :bd <C-a><CR>
 nnoremap <leader>r :source ~/dev/dotfiles/init.vim<CR>
-nnoremap <leader>w :w<CR>
 nnoremap <leader>h :GitGutterLineHighlightsToggle<CR>
-inoremap <leader>w <Esc>:w<CR>
-inoremap <leader>d <Esc>:Dash<CR>
 
 " RSpec.vim mappings
 nnoremap <Leader>e :!rspec<cr>
@@ -100,14 +97,16 @@ nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
 nnoremap <Leader>a :call RunAllSpecs()<CR>
 
+noremap <leader>w :w<CR>
+
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap ,f :NERDTreeFind<CR>
 nnoremap <space><space> :b#<CR>
 nnoremap 0 ^
 nnoremap k gk
 nnoremap j gj
-
 nnoremap === mmgg=G`m^zz`<Esc> :w<CR>
+
 inoremap jk <Esc>
 inoremap uu <Esc>u
 
