@@ -93,6 +93,7 @@ alias v="nvim"
 alias vv="nvim  ~/dev/dotfiles/init.vim"
 alias vz="nvim  ~/dev/dotfiles/.zshrc"
 alias vt="nvim  ~/dev/dotfiles/.tmux.conf"
+alias vn="nvim  ~/dev/dotfiles/notes"
 alias vd="cd ~/dev/dotfiles"
 
 # zsh
