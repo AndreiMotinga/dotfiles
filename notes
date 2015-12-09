@@ -28,6 +28,8 @@ remove nerd tree = type
 
 set tab to just guess  wild mode?
 ================================
+
+var select around ruby object
 f<char>  move to char
 t<char>  move till char
 ; repeat
