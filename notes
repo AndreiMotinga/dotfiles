@@ -3,6 +3,7 @@ Vim todo
 increase tmux history
 in vim ruby jump to test file
 set gf to jump to declaration
+what it ctags?
 
 
 ===
@@ -33,6 +34,7 @@ t<char>  move till char
 , repeat backwards
 
 
+c/foo    change all the way till foo
 ciw   change word
 
 ip  do anything in p
