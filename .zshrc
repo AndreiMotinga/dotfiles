@@ -90,6 +90,11 @@ fi
 #   l
 # }
 
+
+# easier navigation
+setopt auto_cd
+cdpath=($HOME/dev)
+
 # vim
 alias v="nvim"
 alias vv="nvim  ~/dev/dotfiles/init.vim"
