@@ -81,3 +81,6 @@ learn vim ctags
 
 TMUX
 prefix z  zoom in window
+
+
+SPEC HELPER MAKES SENSE in controller and feature tests.. rest should be tested without it
