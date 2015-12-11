@@ -1,7 +1,5 @@
 call plug#begin()
 
-Plug 'scrooloose/syntastic'
-
 " text object ruby block
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
@@ -9,6 +7,9 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 " improving vim navigation by disabling hjkl and others
 Plug 'wikitopian/hardmode'
 
+" syntax check
+Plug 'benekastah/neomake'
+"
 Plug 'Shougo/deoplete.nvim'
 Plug 'christoomey/vim-tmux-navigator' "vim tmux integration
 Plug 'tpope/vim-endwise'
@@ -153,66 +154,15 @@ set wildignore+=*.pdf                 " ctrlp - ignore .pdf files
 set wildignore+=*/node_modules/*      " ctrlp - ignore node modules
 set wildignore+=*/bower_components/*  " ctrlp - ignore bower compone
 
-" Ruby syntax check
-let g:syntastic_ruby_checkers     = ['rubocop', 'mri']
-let g:syntastic_ruby_rubocop_exec = '/Users/sonclark/.rbenv/shims/rubocop'
-
-"Indent guides
-
 " emmet
 let g:user_emmet_mode='a'
 
 " YouCompleteMe
 let g:ycm_min_num_of_chars_for_completion = 1
 
-" Syntastic settings
-let g:syntastic_check_on_open = 1        " run syntastic when first opening a file
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'"
-
 " vimrspec
 " let g:rspec_command = "!spring rspec --drb {spec}"
 let g:rspec_command = "!rspec --drb {spec}"
-
-" Syntastic
-" ---------
-let g:syntastic_check_on_open      = 1
-let g:syntastic_check_on_wq        = 1
-let g:syntastic_enable_signs       = 1
-let g:syntastic_enable_balloons    = 0
-let g:syntastic_auto_loc_list      = 2
-let g:syntastic_aggregate_errors   = 1
-let g:syntastic_echo_current_error = 1
-
-" Checkers
-let g:syntastic_php_checkers        = [ 'php' ]
-let g:syntastic_javascript_checkers = [ 'jshint' ]
-let g:syntastic_html_checkers       = [ 'tidy', 'jshint' ]
-let g:syntastic_python_checkers     = [ 'python2', 'pylint', 'flake8' ]
-
-let g:syntastic_html_tidy_ignore_errors = [
-  \  '> proprietary attribute "',
-  \  '> attribute "lang" lacks value',
-  \  '> attribute "href" lacks value',
-  \  'trimming empty <'
-  \ ]
-
-let g:syntastic_html_tidy_blocklevel_tags = [
-  \ 'ng-include',
-  \ 'ng-form'
-  \ ]
-
-let g:syntastic_filetype_map = { "mustache": "handlebars" }
-let g:syntastic_filetype_map = { "html.mustache": "handlebars" }
-
-let g:syntastic_html_tidy_quiet_messages = { "level" : "warnings" }
-let g:syntastic_html_tidy_ignore_errors = [
- \  'plain text isn''t allowed in <head> elements',
- \  '<base> escaping malformed URI reference',
- \  'discarding unexpected <body>',
- \  '<script> escaping malformed URI reference',
- \  '</head> isn''t allowed in <body> elements'
- \ ]
 
 " vim tmux integration
 let g:tmux_navigator_no_mappings = 1
@@ -230,12 +180,12 @@ autocmd VimResized * :wincmd =
 let g:deoplete#enable_at_startup = 1
 
 " enable hardmode
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-" Debugging
-"let g:syntastic_debug = 1
-"let g:syntastic_debug_file = '~/syntastic.log'
+" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
-" vim: set ts=2 sw=2 tw=80 noet :
+" syntax check
+autocmd! BufWritePost * Neomake
+let g:neomake_javascript_enabled_makers = ['jshint']
+let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'reek']
 
 "russian layout
 set langmap=ЖйцукенгшщзфывапролдячсмитьхъЙЦУКЕНГШЩЗФЫВАПРОЛДЯЧСМИТЬ;:qwertyuiopasdfghjklzxcvbnm[]QWERTYUIOPASDFGHJKLZXCVBNM
