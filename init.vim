@@ -10,6 +10,9 @@ Plug 'wikitopian/hardmode'
 " syntax check
 Plug 'benekastah/neomake'
 "
+" rails naviagation
+Plug 'tpope/vim-rails'
+
 Plug 'Shougo/deoplete.nvim'
 Plug 'christoomey/vim-tmux-navigator' "vim tmux integration
 Plug 'tpope/vim-endwise'
