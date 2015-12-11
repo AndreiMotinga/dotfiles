@@ -3,7 +3,7 @@
 
 1. is it DRY?
 2. does it have one responsibilty?
-  Each class should do one thing and do it well.
+   each class should do one thing and do it well.
 3. does everything in it change at the same rate?
 4. does it depend on things that chage less often than it does?
 
@@ -17,3 +17,14 @@
 
   Refactor, not because you KNOW  the abstraction,
     but because you want to find it.
+
+
+  Laws
+
+  1. Tell, Don't Ask
+  2. Law of Demeter
+  3. Open-Closed Principle
+      Class should allow extension but not modification
+  4. Liskov-Substitution Principle
+  5. Dependency Inversion Principle
+
