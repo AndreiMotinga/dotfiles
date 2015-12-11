@@ -6,6 +6,9 @@ Plug 'scrooloose/syntastic'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 
+" improving vim navigation by disabling hjkl and others
+Plug 'wikitopian/hardmode'
+
 Plug 'Shougo/deoplete.nvim'
 Plug 'christoomey/vim-tmux-navigator' "vim tmux integration
 Plug 'tpope/vim-endwise'
@@ -93,7 +96,6 @@ nnoremap <leader>m :bp<CR>
 nnoremap <leader>c :CtrlPClearCache<CR>
 nnoremap <leader>q :bd <C-a><CR>
 nnoremap <leader>r :source ~/dev/dotfiles/init.vim<CR>
-nnoremap <leader>h :GitGutterLineHighlightsToggle<CR>
 
 " RSpec.vim mappings
 nnoremap <Leader>e :!rspec<cr>
@@ -227,6 +229,8 @@ autocmd VimResized * :wincmd =
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 
+" enable hardmode
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 " Debugging
 "let g:syntastic_debug = 1
 "let g:syntastic_debug_file = '~/syntastic.log'
