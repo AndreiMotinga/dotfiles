@@ -198,5 +198,5 @@ inoremap ол <Esc>:w<cr>
 iabbrev r require
 iabbrev rr require_relative
 iabbrev cl console.log()
-iabbrev bp require 'pry'; binding.pry
+iabbrev bp binding.pry
 iabbrev init initialize
