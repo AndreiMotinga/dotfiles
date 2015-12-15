@@ -43,7 +43,6 @@ call plug#end()
 " ====== general ======================
 " =====================================
 " set clipboard=unnamed
-set cursorline
 set shell=/bin/zsh
 syntax on
 set hidden "move between unsaved files
