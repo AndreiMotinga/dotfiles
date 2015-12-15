@@ -5,6 +5,12 @@ in vim ruby jump to test file
 set gf to jump to declaration
 what it ctags?
 
+ALFRED workflow
+,b name  search chrome bookmarks
+maps address  search addres in gmaps
+encode >
+emoji
+install virtual box?
 
 ===
 vim optimization
@@ -38,8 +44,6 @@ t<char>  move till char
 
 c/foo    change all the way till foo
 ciw   change word
-
-ip  do anything in p
 
 it  inside of tag
 dst  remove surrounding tag
@@ -77,6 +81,8 @@ spend some time with ranges
 gf goes to file under cursor
 C-o goes back
 
+C-wHJKL  move window
+
 learn vim ctags
 
 TMUX
@@ -84,3 +90,9 @@ prefix z  zoom in window
 
 
 SPEC HELPER MAKES SENSE in controller and feature tests.. rest should be tested without it
+
+
+
+  WORKFLOW NOTES
+  1. create feature spec
+  2. write the minimum to pass the test
