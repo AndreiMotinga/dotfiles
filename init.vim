@@ -12,6 +12,7 @@ Plug 'benekastah/neomake'
 "
 " rails naviagation
 Plug 'tpope/vim-rails'
+Plug 'janko-m/vim-test'
 
 Plug 'Shougo/deoplete.nvim'
 Plug 'christoomey/vim-tmux-navigator' "vim tmux integration
@@ -25,7 +26,6 @@ Plug 'tpope/vim-surround'
 Plug 'bling/vim-airline'
 Plug 'mattn/emmet-vim'
 Plug 'pbrisbin/vim-mkdir'
-Plug 'thoughtbot/vim-rspec'
 Plug 'Yggdroot/indentLine' " indentation
 Plug 'mustache/vim-mustache-handlebars' " handlebars support
 Plug 'tpope/vim-eunuch' " :Rename filename
@@ -43,7 +43,7 @@ call plug#end()
 " ====== general ======================
 " =====================================
 " set clipboard=unnamed
-set shell=/bin/zsh
+" set shell=/bin/zsh
 syntax on
 set hidden "move between unsaved files
 set clipboard=unnamed "so I can copy in and out
@@ -101,11 +101,11 @@ nnoremap <leader>q :bd <C-a><CR>
 nnoremap <leader>r :source ~/dev/dotfiles/init.vim<CR>
 
 " RSpec.vim mappings
-nnoremap <Leader>e :!rspec<cr>
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
-nnoremap <Leader>a :call RunAllSpecs()<CR>
+nnoremap <Leader>t :TestFile<CR>
+nnoremap <Leader>s :TestNearest<CR>
+nnoremap <Leader>l :TestLast<CR>
+nnoremap <Leader>a :TestLast<CR>
+nnoremap <Leader>g :TestVisit<CR>
 
 noremap <leader>w :w<CR>
 
@@ -162,9 +162,9 @@ let g:user_emmet_mode='a'
 " YouCompleteMe
 let g:ycm_min_num_of_chars_for_completion = 1
 
-" vimrspec
-" let g:rspec_command = "!spring rspec --drb {spec}"
-let g:rspec_command = "!rspec --drb {spec}"
+" test
+let test#strategy = "neovim"
+let test#ruby#rspec#executable = 'spring rspec'
 
 " vim tmux integration
 let g:tmux_navigator_no_mappings = 1
