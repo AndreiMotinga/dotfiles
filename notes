@@ -41,6 +41,7 @@ t<char>  move till char
 ; repeat
 , repeat backwards
 
+/rails/info/routes
 
 c/foo    change all the way till foo
 ciw   change word

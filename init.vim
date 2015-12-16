@@ -9,7 +9,9 @@ Plug 'wikitopian/hardmode'
 
 " syntax check
 Plug 'benekastah/neomake'
-"
+Plug 'vim-ruby/vim-ruby'
+Plug 'othree/html5.vim'
+
 " rails naviagation
 Plug 'tpope/vim-rails'
 Plug 'janko-m/vim-test'
@@ -33,7 +35,7 @@ Plug 'tpope/vim-ragtag' " ^x= for <%= %> and ^x for <% %>
 Plug 'kchmck/vim-coffee-script'
 Plug 'scrooloose/nerdtree'
 Plug 'ggreer/the_silver_searcher'
-Plug 'ervandew/ag'
+Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'  " git gutter
 Plug 'godlygeek/tabular' " align things
 Plug 'rizzatti/dash.vim' " docs
@@ -44,11 +46,11 @@ call plug#end()
 " =====================================
 " set clipboard=unnamed
 " set shell=/bin/zsh
-syntax on
 set hidden "move between unsaved files
 set clipboard=unnamed "so I can copy in and out
 set colorcolumn=80
 filetype plugin indent on
+syntax on
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -101,11 +103,11 @@ nnoremap <leader>q :bd <C-a><CR>
 nnoremap <leader>r :source ~/dev/dotfiles/init.vim<CR>
 
 " RSpec.vim mappings
-nnoremap <Leader>t :TestFile<CR>
-nnoremap <Leader>s :TestNearest<CR>
-nnoremap <Leader>l :TestLast<CR>
-nnoremap <Leader>a :TestLast<CR>
-nnoremap <Leader>g :TestVisit<CR>
+nnoremap <Leader>t :wa<cr>:TestFile<CR>
+nnoremap <Leader>s :wa<cr>:TestNearest<CR>
+nnoremap <Leader>l :wa<cr>:TestLast<CR>
+nnoremap <Leader>a :wa<cr>:TestLast<CR>
+nnoremap <Leader>g :wa<cr>:TestVisit<CR>
 
 noremap <leader>w :w<CR>
 
@@ -127,7 +129,7 @@ if executable('ag')
 endif
 nmap <silent> <DOWN> :cnext<CR>
 nmap <silent> <UP> :cprev<CR>
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap K :vimgrep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 "=========================================
 " =============== plugins =================
