@@ -10,16 +10,15 @@ Plug 'wikitopian/hardmode'
 " syntax check
 Plug 'benekastah/neomake'
 Plug 'vim-ruby/vim-ruby'
-Plug 'othree/html5.vim'
 
 " rails naviagation
 Plug 'tpope/vim-rails'
+" running tests
 Plug 'janko-m/vim-test'
 
 Plug 'Shougo/deoplete.nvim'
 Plug 'christoomey/vim-tmux-navigator' "vim tmux integration
 Plug 'tpope/vim-endwise'
-Plug 'benjaminwhite/Benokai'
 Plug 'bbatsov/rubocop'
 Plug 'kien/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -51,6 +50,7 @@ set clipboard=unnamed "so I can copy in and out
 set colorcolumn=80
 filetype plugin indent on
 syntax on
+" syntax enable
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -62,24 +62,16 @@ set number
 set ignorecase
 set smartcase
 
-syntax enable
-set background=light
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-let g:solarized_termcolors = 16
-colorscheme benokai
-
 " resize focused window
 set winwidth=84
 set winheight=5
 set winminheight=5
 set winheight=999
+"
+set splitright    " Puts new vsplit windows to the right of the current
+set splitbelow    " Puts new split windows to the bottom of the current
 
-" set wildmode=longest:full,list    " tab completion
-" set wildmenu                      " tab completion
-set splitright                  " Puts new vsplit windows to the right of the current
-set splitbelow                  " Puts new split windows to the bottom of the current
-"  trail whitespace from the end of the line
+"remove  trail whitespace from the end of the line
 fun! <SID>StripTrailingWhitespaces()
   let l = line(".")
   let c = col(".")
@@ -87,6 +79,7 @@ fun! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+"
 
 " =========== mappings ===================
 " ======================================
@@ -95,6 +88,7 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 let mapleader = ","
 let g:mapleader = ","
 
+noremap <leader>w :w<CR>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>n :bn<CR>
 nnoremap <leader>m :bp<CR>
@@ -109,8 +103,6 @@ nnoremap <Leader>l :wa<cr>:TestLast<CR>
 nnoremap <Leader>a :wa<cr>:TestLast<CR>
 nnoremap <Leader>g :wa<cr>:TestVisit<CR>
 
-noremap <leader>w :w<CR>
-
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap ,f :NERDTreeFind<CR>
 nnoremap <space><space> :b#<CR>
@@ -118,6 +110,12 @@ nnoremap 0 ^
 nnoremap k gk
 nnoremap j gj
 nnoremap === mmgg=G`m^zz`<Esc> :w<CR>
+
+nnoremap <C-j> :TmuxNavigateDown<cr>
+nnoremap <C-k> :TmuxNavigateUp<cr>
+nnoremap <C-l> :TmuxNavigateRight<cr>
+nnoremap <C-h> :TmuxNavigateLeft<cr>
+" nnoremap <C-a> :TmuxNavigatePrevious<cr>
 
 inoremap jk <Esc>
 inoremap uu <Esc>u
@@ -135,11 +133,11 @@ nnoremap K :vimgrep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " =============== plugins =================
 " =======================================
 
-" Markdown
-let g:instant_markdown_slow = 1
+let g:user_emmet_mode='a' " emmet
+let g:tmux_navigator_no_mappings = 1 " vim tmux integration
+let g:deoplete#enable_at_startup = 1 " Use deoplete.
 
 " Airline settings
-" set ambiwidth=double breakcs russian layout
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_theme='badwolf'
@@ -158,46 +156,30 @@ set wildignore+=*.pdf                 " ctrlp - ignore .pdf files
 set wildignore+=*/node_modules/*      " ctrlp - ignore node modules
 set wildignore+=*/bower_components/*  " ctrlp - ignore bower compone
 
-" emmet
-let g:user_emmet_mode='a'
-
-" YouCompleteMe
-let g:ycm_min_num_of_chars_for_completion = 1
-
 " test
 let test#strategy = "neovim"
 let test#ruby#rspec#executable = 'spring rspec'
 
-" vim tmux integration
-let g:tmux_navigator_no_mappings = 1
-
-nnoremap <C-j> :TmuxNavigateDown<cr>
-nnoremap <C-k> :TmuxNavigateUp<cr>
-nnoremap <C-l> :TmuxNavigateRight<cr>
-nnoremap <C-h> :TmuxNavigateLeft<cr>
-" nnoremap <C-a> :TmuxNavigatePrevious<cr>
-
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-
 " enable hardmode
-" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " syntax check
 autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['jshint']
 let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'reek']
 
-"russian layout
+" ===============================================
+" ==========" "russian layout====================
+" ===============================================
 set langmap=ЖйцукенгшщзфывапролдячсмитьхъЙЦУКЕНГШЩЗФЫВАПРОЛДЯЧСМИТЬ;:qwertyuiopasdfghjklzxcvbnm[]QWERTYUIOPASDFGHJKLZXCVBNM
 nnoremap бц <Esc>:w<cr>
 inoremap ол <Esc>:w<cr>
 
-" =================================================
-" ==========" abbreviations =================================
+" ===============================================
+" ==========" abbreviations =====================
 " ===============================================
 iabbrev r require
 iabbrev rr require_relative
