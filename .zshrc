@@ -121,17 +121,25 @@ alias -g CI="cd ~/dev/projects/chogde/items"
 
 # git
 alias hb="hub browse"
-alias hc="hub create"
 alias gcob="git checkout -b"
 alias gpl="git pull"
-alias gphm="git push heroku master"
+
+#heroku
+alias hp="git push heroku master"
+alias hr="heroku restart"
+alias hc="heroku run rails console"
+alias hmg="heroku run rake db:migrate"
+alias hl="heroku logs -t"
+alias ho="heroku open"
 
 # rails
 alias rls='spring rails'
 alias rk='spring rake'
+alias rr='spring rake routes |grep '
 alias mg='spring rake db:migrate'
 alias b="bundle"
 alias be="bundle exec"
+alias sr="spring rspec"
 
 # tmux
 alias tn="tmux new-session -s"
@@ -139,6 +147,10 @@ alias tk="tmux kill-session -t"
 alias ta="tmux attach -t"
 alias tl="tmux ls"
 alias ts="tmuxinator start"
+
+# misc
+alias ng="./ngrok http 3000"
+alias fs="foreman start"
 
 bindkey -s '^G' ' | grep '
 # Show the entries in a directory whenever you cd in

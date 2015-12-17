@@ -3,6 +3,7 @@ call plug#begin()
 " text object ruby block
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'suan/vim-instant-markdown' "markdown
 
 " improving vim navigation by disabling hjkl and others
 Plug 'wikitopian/hardmode'
@@ -13,8 +14,11 @@ Plug 'vim-ruby/vim-ruby'
 
 " rails naviagation
 Plug 'tpope/vim-rails'
+
 " running tests
 Plug 'janko-m/vim-test'
+Plug 'christoomey/vim-tmux-runner'
+Plug 'GGalizzi/cake-vim'
 
 Plug 'Shougo/deoplete.nvim'
 Plug 'christoomey/vim-tmux-navigator' "vim tmux integration
@@ -38,9 +42,11 @@ Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'  " git gutter
 Plug 'godlygeek/tabular' " align things
 Plug 'rizzatti/dash.vim' " docs
+Plug 'evanmiller/nginx-vim-syntax' " nginx colors
 
 call plug#end()
 
+" =====================================
 " ====== general ======================
 " =====================================
 " set clipboard=unnamed
@@ -48,6 +54,7 @@ call plug#end()
 set hidden "move between unsaved files
 set clipboard=unnamed "so I can copy in and out
 set colorcolumn=80
+colorscheme desert
 filetype plugin indent on
 syntax on
 " syntax enable
@@ -59,7 +66,7 @@ set nolist
 set nobackup
 set noswapfile
 set number
-set ignorecase
+" set ignorecase
 set smartcase
 
 " resize focused window
@@ -100,7 +107,7 @@ nnoremap <leader>r :source ~/dev/dotfiles/init.vim<CR>
 nnoremap <Leader>t :wa<cr>:TestFile<CR>
 nnoremap <Leader>s :wa<cr>:TestNearest<CR>
 nnoremap <Leader>l :wa<cr>:TestLast<CR>
-nnoremap <Leader>a :wa<cr>:TestLast<CR>
+nnoremap <Leader>a :wa<cr>:TestSuite<CR>
 nnoremap <Leader>g :wa<cr>:TestVisit<CR>
 
 nnoremap <C-n> :NERDTreeToggle<CR>
@@ -117,7 +124,7 @@ nnoremap <C-l> :TmuxNavigateRight<cr>
 nnoremap <C-h> :TmuxNavigateLeft<cr>
 " nnoremap <C-a> :TmuxNavigatePrevious<cr>
 
-inoremap jk <Esc>
+inoremap jkk <Esc>
 inoremap uu <Esc>u
 
 if executable('ag')
@@ -157,14 +164,16 @@ set wildignore+=*/node_modules/*      " ctrlp - ignore node modules
 set wildignore+=*/bower_components/*  " ctrlp - ignore bower compone
 
 " test
-let test#strategy = "neovim"
-let test#ruby#rspec#executable = 'spring rspec'
+" TODO
+" might not be needed. spring is loading automatically?
+" let test#ruby#rspec#executable = 'spring rspec'
+let test#strategy = "vtr"
 
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
 " enable hardmode
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " syntax check
 autocmd! BufWritePost * Neomake
