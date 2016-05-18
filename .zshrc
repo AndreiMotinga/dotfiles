@@ -108,21 +108,9 @@ alias vd="cd ~/dev/dotfiles"
 alias rmt="rmtrash"
 alias c="clear"
 
-# projects
-alias -g P="cd ~/dev/projects"
-alias -g C="cd ~/dev/projects/chogde"
-alias -g CS="cd ~/dev/projects/chogde/server"
-alias -g CSS="cd ~/dev/projects/chogde/services"
-alias -g CD="cd ~/dev/projects/chogde/dashboard"
-alias -g CR="cd ~/dev/projects/chogde/real-estate"
-alias -g CK="cd ~/dev/projects/chogde/chogde-kit"
-alias -g CJ="cd ~/dev/projects/chogde/jobs"
-alias -g CI="cd ~/dev/projects/chogde/items"
-
 # git
 alias hb="hub browse"
 alias gcob="git checkout -b"
-alias gpl="git pull"
 
 #heroku
 alias hp="git push heroku master"
@@ -130,13 +118,12 @@ alias hr="heroku restart"
 alias hc="heroku run rails console"
 alias hmg="heroku run rake db:migrate"
 alias hl="heroku logs -t"
-alias ho="heroku open"
 
 # rails
-alias rls='spring rails'
-alias rk='spring rake'
-alias rr='spring rake routes |grep '
-alias mg='spring rake db:migrate'
+alias rls="spring rails"
+alias rk="spring rake"
+alias rr="spring rake routes |grep "
+alias mg="spring rake db:migrate"
 alias b="bundle"
 alias be="bundle exec"
 alias sr="spring rspec"
