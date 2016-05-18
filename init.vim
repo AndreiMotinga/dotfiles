@@ -124,7 +124,7 @@ nnoremap <C-l> :TmuxNavigateRight<cr>
 nnoremap <C-h> :TmuxNavigateLeft<cr>
 " nnoremap <C-a> :TmuxNavigatePrevious<cr>
 
-inoremap jkk <Esc>
+inoremap jk <Esc>
 inoremap uu <Esc>u
 
 if executable('ag')
@@ -147,7 +147,7 @@ let g:deoplete#enable_at_startup = 1 " Use deoplete.
 " Airline settings
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline_theme='badwolf'
+" let g:airline_theme='badwolf'
 
 " Ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -185,7 +185,6 @@ let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'reek']
 " ===============================================
 set langmap=ЖйцукенгшщзфывапролдячсмитьхъЙЦУКЕНГШЩЗФЫВАПРОЛДЯЧСМИТЬ;:qwertyuiopasdfghjklzxcvbnm[]QWERTYUIOPASDFGHJKLZXCVBNM
 nnoremap бц <Esc>:w<cr>
-inoremap ол <Esc>:w<cr>
 
 " ===============================================
 " ==========" abbreviations =====================
