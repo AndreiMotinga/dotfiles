@@ -39,7 +39,8 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'scrooloose/nerdtree'
 Plug 'ggreer/the_silver_searcher'
 Plug 'rking/ag.vim'
-Plug 'airblade/vim-gitgutter'  " git gutter
+Plug 'airblade/vim-gitgutter'  " git, shows changed lines
+Plug 'tpope/vim-fugitive'
 Plug 'godlygeek/tabular' " align things
 Plug 'rizzatti/dash.vim' " docs
 Plug 'evanmiller/nginx-vim-syntax' " nginx colors
@@ -162,6 +163,7 @@ set wildignore+=*.zip                 " ctrlp - ignore .zip files
 set wildignore+=*.pdf                 " ctrlp - ignore .pdf files
 set wildignore+=*/node_modules/*      " ctrlp - ignore node modules
 set wildignore+=*/bower_components/*  " ctrlp - ignore bower compone
+set wildignore+=*/google-maps-utility-library-v3/*
 
 " test
 " TODO

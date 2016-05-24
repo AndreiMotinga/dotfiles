@@ -1,16 +1,7 @@
 TODO
 Vim todo
 increase tmux history
-in vim ruby jump to test file
-set gf to jump to declaration
-what it ctags?
-
-ALFRED workflow
-,b name  search chrome bookmarks
-maps address  search addres in gmaps
-encode >
-emoji
-install virtual box?
+what is ctags?
 
 ===
 vim optimization
@@ -20,19 +11,10 @@ learn how to use alfred code snippets
 fix navigation to be C-h to both panes and
 create new files and dirs in vim directly
 
-autosave when run spec
-
 how to search open buffers only ?
-
-start showing suggestions when they are available
-
-rails -s -d  ??
 
 remove nerd tree = type
 
-:r  filename   copy??
-
-set tab to just guess  wild mode?
 ================================
 
 var select around ruby object
