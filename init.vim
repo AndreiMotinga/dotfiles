@@ -11,6 +11,7 @@ Plug 'wikitopian/hardmode'
 " syntax check
 Plug 'benekastah/neomake'
 Plug 'vim-ruby/vim-ruby'
+Plug 'slim-template/vim-slim'
 
 " rails naviagation
 Plug 'tpope/vim-rails'
@@ -181,6 +182,9 @@ autocmd VimResized * :wincmd =
 autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['jshint']
 let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'reek']
+
+" enable slim highlight
+au BufRead,BufNewFile *.html.slim set filetype=slim
 
 " ===============================================
 " ==========" "russian layout====================
