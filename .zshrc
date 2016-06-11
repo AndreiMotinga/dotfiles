@@ -90,10 +90,9 @@ fi
 #   l
 # }
 
-
 # easier navigation
 setopt auto_cd
-cdpath=($HOME/dev)
+cdpath=($HOME/dev;$HOME/dev/ezworks)
 
 # vim
 alias v="nvim"

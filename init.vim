@@ -79,6 +79,7 @@ set winheight=999
 "
 set splitright    " Puts new vsplit windows to the right of the current
 set splitbelow    " Puts new split windows to the bottom of the current
+set ic " case insensitive search
 
 "remove  trail whitespace from the end of the line
 fun! <SID>StripTrailingWhitespaces()
@@ -142,6 +143,7 @@ nnoremap K :vimgrep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " =============== plugins =================
 " =======================================
 
+let g:instant_markdown_autostart = 0 " don't autostart  instant markdown
 let g:user_emmet_mode='a' " emmet
 let g:tmux_navigator_no_mappings = 1 " vim tmux integration
 let g:deoplete#enable_at_startup = 1 " Use deoplete.
@@ -167,9 +169,7 @@ set wildignore+=*/bower_components/*  " ctrlp - ignore bower compone
 set wildignore+=*/google-maps-utility-library-v3/*
 
 " test
-" TODO
-" might not be needed. spring is loading automatically?
-" let test#ruby#rspec#executable = 'spring rspec'
+let test#ruby#rspec#executable = 'spring rspec'
 let test#strategy = "vtr"
 
 " automatically rebalance windows on vim resize
@@ -181,7 +181,7 @@ autocmd VimResized * :wincmd =
 " syntax check
 autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['jshint']
-let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'reek']
+let g:neomake_ruby_enabled_makers = ['rubocop', 'mri', 'reek']
 
 " enable slim highlight
 au BufRead,BufNewFile *.html.slim set filetype=slim
