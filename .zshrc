@@ -113,26 +113,28 @@ alias gcob="git checkout -b"
 
 #heroku
 alias hp="git push heroku master"
-alias hr="heroku restart"
-alias hc="heroku run rails console"
-alias hmg="heroku run rake db:migrate"
+alias hmg="heroku run rails db:migrate"
 alias hl="heroku logs -t"
+alias hr="heroku restart"
 
 # rails
-alias rls="spring rails"
-alias rk="spring rake"
-alias rr="spring rake routes |grep "
-alias mg="spring rake db:migrate"
+alias mg="spring rails db:migrate"
 alias b="bundle"
-alias be="bundle exec"
+alias bu="bundle update"
 alias sr="spring rspec"
+alias r="spring rails"
+alias rr="spring rake routes |grep "
+alias rk="spring rake"
 
 # tmux
 alias tn="tmux new-session -s"
 alias tk="tmux kill-session -t"
 alias ta="tmux attach -t"
+alias ts="tmux switch -t"
 alias tl="tmux ls"
-alias ts="tmuxinator start"
+
+# middleman
+alias mm="middleman"
 
 # misc
 alias ng="./ngrok http 3000"
@@ -149,3 +151,4 @@ zle -N foreground-vi
 bindkey '^Z' foreground-vi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export MOT="mot"

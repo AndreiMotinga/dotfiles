@@ -10,6 +10,8 @@ Plug 'wikitopian/hardmode'
 
 " syntax check
 Plug 'benekastah/neomake'
+Plug 'brigade/scss-lint' " scss linter
+
 Plug 'vim-ruby/vim-ruby'
 Plug 'slim-template/vim-slim'
 
@@ -180,8 +182,14 @@ autocmd VimResized * :wincmd =
 
 " syntax check
 autocmd! BufWritePost * Neomake
-let g:neomake_javascript_enabled_makers = ['jshint']
-let g:neomake_ruby_enabled_makers = ['rubocop', 'mri', 'reek']
+let g:neomake_javascript_enabled_markers = ['jshint', 'jscs']
+let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'reek']
+let g:neomake_scss_enabled_markers = ['csslint']
+let g:neomake_scss_csslint_maker = {
+    \ 'args': ['--verbose'],
+    \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+\ }
+let g:neomake_scss_enabled_markers = ['csslint']
 
 " enable slim highlight
 au BufRead,BufNewFile *.html.slim set filetype=slim
