@@ -114,7 +114,8 @@ alias gcob="git checkout -b"
 #heroku
 alias hp="git push heroku master"
 alias hmg="heroku run rails db:migrate"
-alias hl="heroku logs -t"
+alias hlw="heroku logs --dyno web -t"
+alias hlj="heroku logs --dyno worker -t"
 alias hr="heroku restart"
 
 # rails
