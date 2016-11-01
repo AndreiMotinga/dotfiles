@@ -104,6 +104,7 @@ let g:mapleader = ","
 
 noremap <leader>w :w<CR>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+:nnoremap * *``b
 nnoremap <leader>n :bn<CR>
 nnoremap <leader>m :bp<CR>
 nnoremap <leader>c :CtrlPClearCache<CR>
