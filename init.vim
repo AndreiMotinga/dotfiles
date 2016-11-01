@@ -5,6 +5,8 @@ Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'suan/vim-instant-markdown' "markdown
 
+Plug 'elzr/vim-json' "json
+
 " improving vim navigation by disabling hjkl and others
 Plug 'wikitopian/hardmode'
 
@@ -193,6 +195,8 @@ let g:neomake_scss_enabled_markers = ['csslint']
 
 " enable slim highlight
 au BufRead,BufNewFile *.html.slim set filetype=slim
+
+let g:vim_json_syntax_conceal = 0 "disabe hiding in json files
 
 " ===============================================
 " ==========" "russian layout====================
