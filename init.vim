@@ -1,61 +1,30 @@
 call plug#begin()
-
-" text object ruby block
-Plug 'kana/vim-textobj-user'
-Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'suan/vim-instant-markdown' "markdown
-
 Plug 'elzr/vim-json' "json
-
-" improving vim navigation by disabling hjkl and others
-Plug 'wikitopian/hardmode'
-
-" syntax check
-Plug 'benekastah/neomake'
-Plug 'brigade/scss-lint' " scss linter
-
+Plug 'benekastah/neomake' " syntax check
 Plug 'vim-ruby/vim-ruby'
 Plug 'slim-template/vim-slim'
-
-" rails naviagation
-Plug 'tpope/vim-rails'
-
-" running tests
-Plug 'janko-m/vim-test'
-Plug 'christoomey/vim-tmux-runner'
-Plug 'GGalizzi/cake-vim'
-
-Plug 'Shougo/deoplete.nvim'
-Plug 'christoomey/vim-tmux-navigator' "vim tmux integration
+Plug 'tpope/vim-rails' " rails naviagation
+Plug 'janko-m/vim-test' " running tests
+Plug 'christoomey/vim-tmux-runner' " running tests
+Plug 'Shougo/deoplete.nvim' " text completion
+Plug 'christoomey/vim-tmux-navigator' "vim tmux integrated naviagation
 Plug 'tpope/vim-endwise'
-Plug 'bbatsov/rubocop'
 Plug 'kien/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'bling/vim-airline'
-Plug 'mattn/emmet-vim'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'Yggdroot/indentLine' " indentation
-Plug 'mustache/vim-mustache-handlebars' " handlebars support
 Plug 'tpope/vim-eunuch' " :Rename filename
 Plug 'tpope/vim-ragtag' " ^x= for <%= %> and ^x for <% %>
 Plug 'kchmck/vim-coffee-script'
 Plug 'scrooloose/nerdtree'
-Plug 'ggreer/the_silver_searcher'
-Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'  " git, shows changed lines
-Plug 'tpope/vim-fugitive'
 Plug 'godlygeek/tabular' " align things
-Plug 'rizzatti/dash.vim' " docs
-Plug 'evanmiller/nginx-vim-syntax' " nginx colors
-
 call plug#end()
 
-" =====================================
-" ====== general ======================
-" =====================================
-" set clipboard=unnamed
 " set shell=/bin/zsh
 set hidden "move between unsaved files
 set clipboard=unnamed "so I can copy in and out
