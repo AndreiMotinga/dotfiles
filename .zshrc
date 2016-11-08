@@ -53,6 +53,7 @@ ZSH_THEME="robbyrussell"
 
 # make sure zsh-syntax-highlighting is downloaded
 plugins=(git zsh-syntax-highlighting)
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
