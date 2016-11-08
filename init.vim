@@ -62,6 +62,8 @@ nnoremap <leader>c :CtrlPClearCache<CR>
 nnoremap <leader>q :bd <C-a><CR>
 nnoremap <leader>r :source ~/dev/dotfiles/init.vim<CR>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>et :e ~/dev/dotfiles/todo<cr>
+nnoremap <leader>ez :e ~/dev/dotfiles/.zshrc<cr>
 
 nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
