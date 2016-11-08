@@ -198,6 +198,7 @@ let g:neomake_scss_enabled_markers = ['csslint']
 au BufRead,BufNewFile *.html.slim set filetype=slim
 
 let g:vim_json_syntax_conceal = 0 "disabe hiding in json files
+let NERDTreeShowHidden=1 " show .dotfiles
 
 " ===============================================
 " ==========" "russian layout====================
