@@ -23,62 +23,30 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'  " git, shows changed lines
 Plug 'godlygeek/tabular' " align things
+Plug 'rking/ag.vim'
 call plug#end()
 
-" set shell=/bin/zsh
+colorscheme desert
 set hidden "move between unsaved files
 set clipboard=unnamed "so I can copy in and out
 set colorcolumn=80
-colorscheme desert
-filetype plugin indent on
-syntax on
-" syntax enable
 set tabstop=2
 set shiftwidth=2
 set expandtab
 set t_Co=256
-set nolist
+set list listchars=tab:»·,trail:·,nbsp:· " Display extra whitespace
 set nobackup
 set noswapfile
 set number
-" set ignorecase
 set smartcase
-
-" resize focused window
-set winwidth=84
-set winheight=5
-set winminheight=5
-set winheight=999
-"
 set splitright    " Puts new vsplit windows to the right of the current
 set splitbelow    " Puts new split windows to the bottom of the current
 set ic " case insensitive search
+set iskeyword+=- " Allow to autocomplete hyphenated words
 
-"remove  trail whitespace from the end of the line
-fun! <SID>StripTrailingWhitespaces()
-  let l = line(".")
-  let c = col(".")
-  %s/\s\+$//e
-  call cursor(l, c)
-endfun
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-"
-
-" =========== mappings ===================
-" ======================================
-
-"leader settings  ======================
+" mappings
 let mapleader = ","
 let g:mapleader = ","
-
-noremap <leader>w :w<CR>
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-:nnoremap * *``b
-nnoremap <leader>n :bn<CR>
-nnoremap <leader>m :bp<CR>
-nnoremap <leader>c :CtrlPClearCache<CR>
-nnoremap <leader>q :bd <C-a><CR>
-nnoremap <leader>r :source ~/dev/dotfiles/init.vim<CR>
 
 " RSpec.vim mappings
 nnoremap <Leader>t :wa<cr>:TestFile<CR>
@@ -87,45 +55,49 @@ nnoremap <Leader>l :wa<cr>:TestLast<CR>
 nnoremap <Leader>a :wa<cr>:TestSuite<CR>
 nnoremap <Leader>g :wa<cr>:TestVisit<CR>
 
+nnoremap <leader>w :w<CR>
+nnoremap <leader>n :bn<CR>
+nnoremap <leader>m :bp<CR>
+nnoremap <leader>c :CtrlPClearCache<CR>
+nnoremap <leader>q :bd <C-a><CR>
+nnoremap <leader>r :source ~/dev/dotfiles/init.vim<CR>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
+nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap ,f :NERDTreeFind<CR>
 nnoremap <space><space> :b#<CR>
 nnoremap 0 ^
 nnoremap k gk
 nnoremap j gj
+inoremap jk <Esc>
+inoremap uu <Esc>u
 nnoremap === mmgg=G`m^zz`<Esc> :w<CR>
+nnoremap * *``b
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 nnoremap <C-j> :TmuxNavigateDown<cr>
 nnoremap <C-k> :TmuxNavigateUp<cr>
 nnoremap <C-l> :TmuxNavigateRight<cr>
 nnoremap <C-h> :TmuxNavigateLeft<cr>
-" nnoremap <C-a> :TmuxNavigatePrevious<cr>
-
-inoremap jk <Esc>
-inoremap uu <Esc>u
-
-if executable('ag')
-  " Note we extract the column as well as the file and line number
-  set grepprg=ag\ --nogroup\ --nocolor\ --column
-  set grepformat=%f:%l:%c%m
-endif
-nmap <silent> <DOWN> :cnext<CR>
-nmap <silent> <UP> :cprev<CR>
-nnoremap K :vimgrep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-"=========================================
-" =============== plugins =================
-" =======================================
+nnoremap бц <Esc>:w<cr>
+set langmap=ЖйцукенгшщзфывапролдячсмитьхъЙЦУКЕНГШЩЗФЫВАПРОЛДЯЧСМИТЬ;:qwertyuiopasdfghjklzxcvbnm[]QWERTYUIOPASDFGHJKLZXCVBNM " russian layout
 
 let g:instant_markdown_autostart = 0 " don't autostart  instant markdown
-let g:user_emmet_mode='a' " emmet
 let g:tmux_navigator_no_mappings = 1 " vim tmux integration
 let g:deoplete#enable_at_startup = 1 " Use deoplete.
+let g:airline#extensions#tabline#enabled = 1 " Airline settings
+let g:airline#extensions#tabline#fnamemod = ':t' " Airline settings
+let NERDTreeShowHidden=1 " show .dotfiles
+let g:vim_json_syntax_conceal = 0 "disabe hiding in json files
 
-" Airline settings
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
-" let g:airline_theme='badwolf'
+" test
+let test#ruby#rspec#executable = 'spring rspec'
+let test#strategy = "vtr"
+
+" syntax check
+autocmd! BufWritePost * Neomake
+let g:neomake_javascript_enabled_markers = ['jshint', 'jscs']
+let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'reek']
 
 " Ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -142,44 +114,35 @@ set wildignore+=*/node_modules/*      " ctrlp - ignore node modules
 set wildignore+=*/bower_components/*  " ctrlp - ignore bower compone
 set wildignore+=*/google-maps-utility-library-v3/*
 
-" test
-let test#ruby#rspec#executable = 'spring rspec'
-let test#strategy = "vtr"
-
-" automatically rebalance windows on vim resize
-autocmd VimResized * :wincmd =
-
-" enable hardmode
-" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-
-" syntax check
-autocmd! BufWritePost * Neomake
-let g:neomake_javascript_enabled_markers = ['jshint', 'jscs']
-let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'reek']
-let g:neomake_scss_enabled_markers = ['csslint']
-let g:neomake_scss_csslint_maker = {
-    \ 'args': ['--verbose'],
-    \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
-\ }
-let g:neomake_scss_enabled_markers = ['csslint']
-
-" enable slim highlight
-au BufRead,BufNewFile *.html.slim set filetype=slim
-
-let g:vim_json_syntax_conceal = 0 "disabe hiding in json files
-let NERDTreeShowHidden=1 " show .dotfiles
-
-" ===============================================
-" ==========" "russian layout====================
-" ===============================================
-set langmap=ЖйцукенгшщзфывапролдячсмитьхъЙЦУКЕНГШЩЗФЫВАПРОЛДЯЧСМИТЬ;:qwertyuiopasdfghjklzxcvbnm[]QWERTYUIOPASDFGHJKLZXCVBNM
-nnoremap бц <Esc>:w<cr>
-
-" ===============================================
-" ==========" abbreviations =====================
-" ===============================================
+" abbreviations
 iabbrev r require
 iabbrev rr require_relative
 iabbrev cl console.log()
 iabbrev bp binding.pry
 iabbrev init initialize
+
+autocmd BufWritePre * :%s/\s\+$//e " Remove trailing white space on save
+autocmd VimResized * :wincmd = " automatically rebalance windows on vim resize
+
+augroup vimrcEx
+  autocmd!
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it for commit messages, when the position is invalid, or when
+  " inside an event handler (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+  " Set syntax highlighting for specific file types
+  autocmd BufRead,BufNewFile Appraisals set filetype=ruby
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
+augroup END
+
+if executable('ag')
+  " Note we extract the column as well as the file and line number
+  set grepprg=ag\ --nogroup\ --column
+  set grepformat=%f:%l:%m
+endif
