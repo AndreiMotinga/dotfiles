@@ -39,7 +39,7 @@ alias hlw="heroku logs --dyno web -t"
 alias hlj="heroku logs --dyno worker -t"
 
 # rails
-alias mg="spring rake db:migrate"
+alias mg="spring rake db:migrate db:test:prepare"
 alias b="bundle"
 alias sr="spring rspec"
 alias r="spring rails"
