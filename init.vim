@@ -44,6 +44,12 @@ set splitbelow    " Puts new split windows to the bottom of the current
 set ic " case insensitive search
 set iskeyword+=- " Allow to autocomplete hyphenated words
 
+" resize focused window
+set winwidth=84
+set winheight=5
+set winminheight=5
+set winheight=999
+
 " mappings
 let mapleader = ","
 let g:mapleader = ","
