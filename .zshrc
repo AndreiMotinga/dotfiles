@@ -25,6 +25,7 @@ alias vd="cd ~/dev/dotfiles"
 
 # zsh
 alias c="clear"
+alias \$=""
 alias path='echo $PATH | tr -s ":" "\n"'
 
 # git
