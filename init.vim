@@ -51,6 +51,8 @@ set winheight=5
 set winminheight=5
 set winheight=999
 
+let g:loaded_ruby_provider = 1
+
 " mappings
 let mapleader = ","
 let g:mapleader = ","
