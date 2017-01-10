@@ -1,5 +1,6 @@
 call plug#begin()
 Plug 'suan/vim-instant-markdown' "markdown
+Plug 'mattn/emmet-vim' "emmet
 Plug 'elzr/vim-json' "json
 Plug 'benekastah/neomake' " syntax check
 Plug 'vim-ruby/vim-ruby'
