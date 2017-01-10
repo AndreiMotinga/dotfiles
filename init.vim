@@ -92,7 +92,7 @@ nnoremap <C-h> :TmuxNavigateLeft<cr>
 nnoremap бц <Esc>:w<cr>
 set langmap=ЖйцукенгшщзфывапролдячсмитьхъЙЦУКЕНГШЩЗФЫВАПРОЛДЯЧСМИТЬ;:qwertyuiopasdfghjklzxcvbnm[]QWERTYUIOPASDFGHJKLZXCVBNM " russian layout
 
-let g:instant_markdown_autostart = 0 " don't autostart  instant markdown
+let g:instant_markdown_autostart = 1 " autostart  instant markdown
 let g:tmux_navigator_no_mappings = 1 " vim tmux integration
 let g:deoplete#enable_at_startup = 1 " Use deoplete.
 let g:airline#extensions#tabline#enabled = 1 " Airline settings
