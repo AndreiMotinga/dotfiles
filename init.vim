@@ -83,7 +83,6 @@ nnoremap j gj
 inoremap jk <Esc>
 inoremap uu <Esc>u
 nnoremap === mmgg=G`m^zz`<Esc> :w<CR>
-nnoremap * *``b
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 nnoremap <C-j> :TmuxNavigateDown<cr>
