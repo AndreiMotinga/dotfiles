@@ -97,7 +97,7 @@ let g:tmux_navigator_no_mappings = 1 " vim tmux integration
 let g:deoplete#enable_at_startup = 1 " Use deoplete.
 let g:airline#extensions#tabline#enabled = 1 " Airline settings
 let g:airline#extensions#tabline#fnamemod = ':t' " Airline settings
-let NERDTreeShowHidden=1 " show .dotfiles
+" let NERDTreeShowHidden=1 " show .dotfiles
 let g:vim_json_syntax_conceal = 0 "disabe hiding in json files
 
 " test
