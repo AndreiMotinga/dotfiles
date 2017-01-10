@@ -1,5 +1,6 @@
 require "awesome_print"
 AwesomePrint.pry!
+include FactoryGirl::Syntax::Methods if Object.const_defined?("FactoryGirl")
 
 if defined?(PryByebug)
   Pry.commands.alias_command 'c', 'continue'
