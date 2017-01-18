@@ -27,6 +27,7 @@ Plug 'godlygeek/tabular' " align things
 Plug 'rking/ag.vim'
 Plug 'gregsexton/MatchTag' "highlight matching tags in html
 Plug 'hail2u/vim-css3-syntax'
+Plug 'jelera/vim-javascript-syntax'
 call plug#end()
 
 colorscheme desert
