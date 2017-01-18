@@ -25,6 +25,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'  " git, shows changed lines
 Plug 'godlygeek/tabular' " align things
 Plug 'rking/ag.vim'
+Plug 'gregsexton/MatchTag' "highlight matching tags in html
 call plug#end()
 
 colorscheme desert
