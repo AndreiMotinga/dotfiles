@@ -5,7 +5,7 @@ Plug 'elzr/vim-json' "json
 Plug 'benekastah/neomake' " syntax check
 Plug 'vim-ruby/vim-ruby'
 Plug 'slim-template/vim-slim'
-Plug 'tpope/vim-rails' " rails naviagation
+Plug 'tpope/vim-rails' " rails navigation
 Plug 'janko-m/vim-test' " running tests
 Plug 'christoomey/vim-tmux-runner' " running tests
 Plug 'Shougo/deoplete.nvim' " text completion
@@ -26,6 +26,7 @@ Plug 'airblade/vim-gitgutter'  " git, shows changed lines
 Plug 'godlygeek/tabular' " align things
 Plug 'rking/ag.vim'
 Plug 'gregsexton/MatchTag' "highlight matching tags in html
+Plug 'hail2u/vim-css3-syntax'
 call plug#end()
 
 colorscheme desert
