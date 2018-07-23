@@ -60,3 +60,4 @@ alias mm="middleman"
 alias ng="./ngrok http 3000"
 bindkey -s '^G' ' | grep '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(rbenv init -)"
