@@ -20,6 +20,8 @@ cdpath=($HOME/dev;$HOME/dev/ezworks)
 # vim
 alias v="nvim"
 alias vd="cd ~/dev/dotfiles"
+alias vz="nvim ~/dev/dotfiles/.zshrc"
+alias vt="nvim ~/dev/dotfiles/.tmux.conf"
 
 # zsh
 alias c="clear"
@@ -45,6 +47,8 @@ alias srf="spring rspec --only-failures"
 alias r="spring rails"
 alias rr="spring rake routes |grep "
 alias rk="spring rake"
+alias be="bundle exec"
+alias bo="bundle open"
 
 # tmux
 alias tn="tmux new-session -s"
