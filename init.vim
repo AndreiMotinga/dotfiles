@@ -140,6 +140,12 @@ if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
 
+" persist undo after write
+if has('persistent_undo')      "check if your vim version supports it
+  set undofile                 "turn on the feature
+  set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
+endif
+
 " Ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|tmp'
