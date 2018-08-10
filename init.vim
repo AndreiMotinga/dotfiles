@@ -7,7 +7,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-rails' " rails navigation
 Plug 'janko-m/vim-test' " running tests
-Plug 'christoomey/vim-tmux-runner' " running tests
+Plug 'jgdavey/tslime.vim' " running tests
 Plug 'Shougo/deoplete.nvim' " text completion
 Plug 'christoomey/vim-tmux-navigator' "vim tmux integrated naviagation
 Plug 'tpope/vim-endwise'
@@ -36,7 +36,6 @@ Plug 'mxw/vim-jsx'
 
 call plug#end()
 
-colorscheme desert
 set hidden "move between unsaved files
 set clipboard=unnamed "so I can copy in and out
 set colorcolumn=80
@@ -113,7 +112,9 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " test
 let test#ruby#rspec#executable = 'spring rspec'
-let test#strategy = "vtr"
+let test#strategy = "tslime"
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
 
 " syntax check
 autocmd! BufWritePost * Neomake
