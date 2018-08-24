@@ -14,6 +14,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-airline'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'Yggdroot/indentLine' " indentation
