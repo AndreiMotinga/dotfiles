@@ -110,6 +110,7 @@ let g:vim_json_syntax_conceal = 0 "disabe hiding in json files
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " test
+" let test#ruby#rspec#executable = 'dc exec auth env RAILS_ENV=test bundle exec spring rspec'
 let test#ruby#rspec#executable = 'spring rspec'
 let test#strategy = "tslime"
 let g:tslime_always_current_session = 1
