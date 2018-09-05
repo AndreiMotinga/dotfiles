@@ -62,6 +62,10 @@ alias ta="tmux attach -t"
 alias ts="tmux switch -t"
 alias tl="tmux ls"
 
+# docker
+alias dc="docker-compose"
+alias dsr="docker-compose exec auth env RAILS_ENV=test bundle exec spring rspec"
+
 # middleman
 alias mm="middleman"
 
