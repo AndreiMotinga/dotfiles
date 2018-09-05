@@ -38,7 +38,7 @@ call plug#end()
 
 set hidden "move between unsaved files
 set clipboard=unnamed "so I can copy in and out
-set colorcolumn=80
+set colorcolumn=100
 set tabstop=2
 set shiftwidth=2
 set expandtab
