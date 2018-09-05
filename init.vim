@@ -3,6 +3,8 @@ Plug 'mattn/emmet-vim' "emmet
 Plug 'elzr/vim-json' "json
 Plug 'benekastah/neomake' " syntax check
 Plug 'vim-ruby/vim-ruby'
+Plug 'kana/vim-textobj-user' " nelstrom/vim-textobj-rubyblock depends on it
+Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-rails' " rails navigation
 Plug 'janko-m/vim-test' " running tests
@@ -115,6 +117,9 @@ let test#ruby#rspec#executable = 'spring rspec'
 let test#strategy = "tslime"
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
+
+" to enable vim ruby object
+runtime macros/matchit.vim
 
 " syntax check
 autocmd! BufWritePost * Neomake
