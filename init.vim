@@ -36,6 +36,9 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'OrangeT/vim-csharp'
 Plug 'mxw/vim-jsx'
 
+"markdown preview, requires `npm install -g livedown`
+Plug 'shime/vim-livedown'
+
 call plug#end()
 
 set hidden "move between unsaved files
