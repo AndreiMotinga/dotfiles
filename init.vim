@@ -134,7 +134,8 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 
 " syntax check
 autocmd! BufWritePost * Neomake
-let g:neomake_javascript_enabled_markers = ['jshint', 'jscs']
+let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
+let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'reek']
 
 " Neosnippet settings
