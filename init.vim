@@ -103,6 +103,11 @@ nnoremap <C-k> :TmuxNavigateUp<cr>
 nnoremap <C-l> :TmuxNavigateRight<cr>
 nnoremap <C-h> :TmuxNavigateLeft<cr>
 nnoremap бц <Esc>:w<cr>
+
+"disable Ex mode
+map q: <Nop>
+nnoremap Q <nop>
+
 set langmap=ЖйцукенгшщзфывапролдячсмитьхъЙЦУКЕНГШЩЗФЫВАПРОЛДЯЧСМИТЬ;:qwertyuiopasdfghjklzxcvbnm[]QWERTYUIOPASDFGHJKLZXCVBNM " russian layout
 
 let g:tmux_navigator_no_mappings = 1 " vim tmux integration
