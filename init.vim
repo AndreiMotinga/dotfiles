@@ -30,6 +30,7 @@ Plug 'rking/ag.vim'
 Plug 'gregsexton/MatchTag' "highlight matching tags in html
 Plug 'hail2u/vim-css3-syntax'
 Plug 'jelera/vim-javascript-syntax'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
@@ -126,6 +127,10 @@ let g:tslime_always_current_window = 1
 
 " to enable vim ruby object
 runtime macros/matchit.vim
+
+" prettier
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 
 " syntax check
 autocmd! BufWritePost * Neomake
