@@ -115,8 +115,6 @@ let g:deoplete#enable_at_startup = 1 " Use deoplete.
 let g:airline#extensions#tabline#enabled = 1 " Airline settings
 let g:airline#extensions#tabline#fnamemod = ':t' " Airline settings
 " let NERDTreeShowHidden=1 " show .dotfiles
-let g:vim_json_syntax_conceal = 0 "disabe hiding in json files
-
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " test
