@@ -55,6 +55,7 @@ alias rr="spring rake routes |grep "
 alias rk="spring rake"
 alias be="bundle exec"
 alias bo="bundle open"
+alias bu="bundle update"
 
 # tmux
 alias tn="tmux new-session -s"
