@@ -68,6 +68,10 @@ alias tl="tmux ls"
 alias dc="docker-compose"
 alias dsr="docker-compose exec auth env RAILS_ENV=test bundle exec spring rspec"
 
+# yarn
+alias ys="yarn start"
+alias yt="yarn test"
+
 # middleman
 alias mm="middleman"
 
