@@ -132,6 +132,8 @@ runtime macros/matchit.vim
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 
+au BufNewFile,BufRead,BufReadPost *.jb set syntax=ruby
+
 " syntax check
 autocmd! BufWritePost * Neomake
 let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
