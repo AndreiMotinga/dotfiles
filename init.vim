@@ -23,6 +23,7 @@ Plug 'Yggdroot/indentLine' " indentation
 Plug 'tpope/vim-eunuch' " :Rename filename
 Plug 'tpope/vim-ragtag' " ^x= for <%= %> and ^x for <% %>
 Plug 'kchmck/vim-coffee-script'
+Plug 'AndrewRadev/vim-eco'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'  " git, shows changed lines
 Plug 'godlygeek/tabular' " align things
