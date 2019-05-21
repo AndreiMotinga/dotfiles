@@ -219,3 +219,26 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --column
   set grepformat=%f:%l:%m
 endif
+
+" make :A open request spec instead of controller spec
+"   maybe remove when https://github.com/tpope/vim-rails/issues/368 resolved
+let g:rails_projections = {
+      \  "app/controllers/*_controller.rb": {
+      \      "test": [
+      \        "spec/requests/{}_spec.rb",
+      \        "spec/controllers/{}_controller_spec.rb",
+      \        "test/controllers/{}_controller_test.rb"
+      \      ],
+      \      "alternate": [
+      \        "spec/requests/{}_spec.rb",
+      \        "spec/controllers/{}_controller_spec.rb",
+      \        "test/controllers/{}_controller_test.rb"
+      \      ],
+      \   },
+      \   "spec/requests/*_spec.rb": {
+      \      "command": "request",
+      \      "alternate": "app/controllers/{}_controller.rb",
+      \      "template": "require 'rails_helper'\n\n" .
+      \        "RSpec.describe '{}' do\nend",
+      \   },
+      \ }
