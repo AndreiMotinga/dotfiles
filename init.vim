@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'joshdick/onedark.vim' " colorscheme
 Plug 'mattn/emmet-vim' "emmet
 Plug 'elzr/vim-json' "json
 Plug 'benekastah/neomake' " syntax check
@@ -48,6 +49,7 @@ call plug#end()
 set hidden "move between unsaved files
 set clipboard=unnamed "so I can copy in and out
 set colorcolumn=100
+colorscheme onedark
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -133,7 +135,8 @@ runtime macros/matchit.vim
 
 " prettier
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.rb,*.rake PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.rb,*.rake PrettierAsync
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
 
 au BufNewFile,BufRead,BufReadPost *.jb set syntax=ruby
 
