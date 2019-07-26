@@ -32,23 +32,37 @@ Plug 'rking/ag.vim'
 Plug 'gregsexton/MatchTag' "highlight matching tags in html
 Plug 'hail2u/vim-css3-syntax'
 Plug 'jelera/vim-javascript-syntax'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'OrangeT/vim-csharp'
 Plug 'mxw/vim-jsx'
-
 Plug 'ekalinin/Dockerfile.vim'
-
-"markdown preview, requires `npm install -g livedown`
-Plug 'shime/vim-livedown'
+Plug 'shime/vim-livedown' "markdown preview, requires `npm install -g livedown`
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'branch': 'release/1.x',
+  \ 'for': [
+    \ 'javascript',
+    \ 'typescript',
+    \ 'css',
+    \ 'less',
+    \ 'scss',
+    \ 'json',
+    \ 'graphql',
+    \ 'markdown',
+    \ 'vue',
+    \ 'lua',
+    \ 'php',
+    \ 'python',
+    \ 'ruby',
+    \ 'html',
+    \ 'swift' ] }
 
 call plug#end()
 
 set hidden "move between unsaved files
 set clipboard=unnamed "so I can copy in and out
-set colorcolumn=100
+set colorcolumn=95
 colorscheme onedark
 set tabstop=2
 set shiftwidth=2
@@ -126,6 +140,7 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 " test
 " let test#ruby#rspec#executable = 'dc exec auth env RAILS_ENV=test bundle exec spring rspec'
 let test#ruby#rspec#executable = 'spring rspec'
+" let test#ruby#rspec#executable = 'bundle exec rspec'
 let test#strategy = "tslime"
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
@@ -135,8 +150,8 @@ runtime macros/matchit.vim
 
 " prettier
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.rb,*.rake PrettierAsync
-" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.rb,*.rake PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
 
 au BufNewFile,BufRead,BufReadPost *.jb set syntax=ruby
 
