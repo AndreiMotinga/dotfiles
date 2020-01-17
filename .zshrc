@@ -3,6 +3,9 @@ if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
+# add rbenv to path
+export PATH="$HOME/.rbenv/bin:$PATH"
+
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 HYPHEN_INSENSITIVE="true"
