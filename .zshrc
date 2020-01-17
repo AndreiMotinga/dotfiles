@@ -8,7 +8,6 @@ ZSH_THEME="robbyrussell"
 HYPHEN_INSENSITIVE="true"
 
 plugins=(git zsh-syntax-highlighting docker docker-compose)
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
