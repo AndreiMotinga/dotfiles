@@ -2,3 +2,5 @@
 	excludesfile = /Users/andrei/.gitignore_global
 [merge]
 	conflictstyle = diff3
+[pull]
+	ff = only
