@@ -4,3 +4,6 @@
 	conflictstyle = diff3
 [pull]
 	ff = only
+[user]
+	name = Andrei Motinga
+	email = amotinga@dialogedu.com
