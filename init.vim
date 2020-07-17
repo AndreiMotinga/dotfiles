@@ -13,7 +13,7 @@ Plug 'jgdavey/tslime.vim' " running tests
 Plug 'Shougo/deoplete.nvim' " text completion
 Plug 'christoomey/vim-tmux-navigator' "vim tmux integrated naviagation
 Plug 'tpope/vim-endwise'
-Plug 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim' "fuzzy find files
 Plug 'jiangmiao/auto-pairs'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
