@@ -205,6 +205,9 @@ set wildignore+=*/node_modules/*      " ctrlp - ignore node modules
 set wildignore+=*/bower_components/*  " ctrlp - ignore bower compone
 set wildignore+=*/google-maps-utility-library-v3/*
 
+" ignore infinite db/migrate in dialogEDU for easer navigation
+let g:ctrlp_custom_ignore = 'db/migrate'
+
 " abbreviations
 iabbrev r require
 iabbrev rr require_relative
