@@ -1,5 +1,5 @@
 call plug#begin()
-" Plug 'joshdick/onedark.vim' " colorscheme
+Plug 'joshdick/onedark.vim' " colorscheme
 Plug 'mattn/emmet-vim' "emmet
 Plug 'elzr/vim-json' "json
 Plug 'benekastah/neomake' " syntax check
@@ -63,7 +63,7 @@ call plug#end()
 set hidden "move between unsaved files
 set clipboard=unnamed "so I can copy in and out
 set colorcolumn=95
-" colorscheme onedark
+colorscheme onedark
 set tabstop=2
 set shiftwidth=2
 set expandtab
