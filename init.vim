@@ -192,6 +192,9 @@ let g:indentLine_color_term = 240
 
 " Ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+" ignore infinite db/migrate in dialogEDU for easer navigation
+let g:ctrlp_custom_ignore = 'db/migrate'
+let g:ctrlp_match_window = 'min:4,max:40'
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|tmp'
 set wildignore+=*/tmp/*               " ctrlp - ignore files in tmp directories
 set wildignore+=*/target/*            " ctrlp - ignore files in target directories
@@ -205,8 +208,6 @@ set wildignore+=*/node_modules/*      " ctrlp - ignore node modules
 set wildignore+=*/bower_components/*  " ctrlp - ignore bower compone
 set wildignore+=*/google-maps-utility-library-v3/*
 
-" ignore infinite db/migrate in dialogEDU for easer navigation
-let g:ctrlp_custom_ignore = 'db/migrate'
 
 " abbreviations
 iabbrev r require
