@@ -248,5 +248,11 @@ let g:rails_projections = {
       \   },
       \   "spec/vendor/gems/courses/models/*_spec.rb": {
       \      "alternate": "vendor/gems/courses/app/models/courses/{}.rb",
+      \   },
+      \  "vendor/gems/courses/lib/courses/*.rb": {
+      \      "alternate": "spec/vendor/gems/courses/lib/{}_spec.rb",
+      \   },
+      \   "spec/vendor/gems/courses/lib/*_spec.rb": {
+      \      "alternate": "vendor/gems/courses/lib/courses/{}.rb",
       \   }
       \ }
