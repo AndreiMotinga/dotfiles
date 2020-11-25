@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'chr4/nginx.vim' " nginx syntax highlight
 Plug 'joshdick/onedark.vim' " colorscheme
 Plug 'mattn/emmet-vim' "emmet
 Plug 'elzr/vim-json' "json
