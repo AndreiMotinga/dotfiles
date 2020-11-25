@@ -44,20 +44,12 @@ Plug 'prettier/vim-prettier', {
   \ 'branch': 'release/1.x',
   \ 'for': [
     \ 'javascript',
-    \ 'typescript',
     \ 'css',
-    \ 'less',
     \ 'scss',
     \ 'json',
-    \ 'graphql',
     \ 'markdown',
-    \ 'vue',
-    \ 'lua',
-    \ 'php',
-    \ 'python',
     \ 'ruby',
-    \ 'html',
-    \ 'swift' ] }
+    \ 'html' ] }
 
 call plug#end()
 
