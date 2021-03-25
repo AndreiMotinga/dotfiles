@@ -41,7 +41,6 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'shime/vim-livedown' "markdown preview, requires `npm install -g livedown`
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
-  \ 'branch': 'release/1.x',
   \ 'for': [
     \ 'javascript',
     \ 'css',
@@ -132,8 +131,9 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " test
 " let test#ruby#rspec#executable = 'dc exec auth env RAILS_ENV=test bundle exec spring rspec'
-let test#ruby#rspec#executable = 'spring rspec'
+" let test#ruby#rspec#executable = ' HEADLESS=false spring rspec'
 " let test#ruby#rspec#executable = 'bundle exec rspec'
+let test#ruby#rspec#executable = 'HEADLESS=false spring rspec'
 let test#strategy = "tslime"
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
@@ -235,17 +235,23 @@ if executable('ag')
   set grepformat=%f:%l:%m
 endif
 
-let g:rails_projections = {
-      \  "vendor/gems/courses/app/models/courses/*.rb": {
-      \      "alternate": "spec/vendor/gems/courses/models/{}_spec.rb",
-      \   },
-      \   "spec/vendor/gems/courses/models/*_spec.rb": {
-      \      "alternate": "vendor/gems/courses/app/models/courses/{}.rb",
-      \   },
-      \  "vendor/gems/courses/lib/courses/*.rb": {
-      \      "alternate": "spec/vendor/gems/courses/lib/{}_spec.rb",
-      \   },
-      \   "spec/vendor/gems/courses/lib/*_spec.rb": {
-      \      "alternate": "vendor/gems/courses/lib/courses/{}.rb",
-      \   }
-      \ }
+" let g:rails_projections = {
+"       \  "vendor/gems/courses/app/models/courses/*.rb": {
+"       \      "alternate": "spec/vendor/gems/courses/models/{}_spec.rb",
+"       \   },
+"       \   "spec/vendor/gems/courses/models/*_spec.rb": {
+"       \      "alternate": "vendor/gems/courses/app/models/courses/{}.rb",
+"       \   },
+"       \  "vendor/gems/courses/app/services/*.rb": {
+"       \      "alternate": "spec/vendor/gems/courses/services/{}_spec.rb",
+"       \   },
+"       \   "spec/vendor/gems/courses/services/*_spec.rb": {
+"       \      "alternate": "vendor/gems/courses/app/services/{}.rb",
+"       \   },
+"       \  "vendor/gems/courses/lib/courses/*.rb": {
+"       \      "alternate": "spec/vendor/gems/courses/lib/{}_spec.rb",
+"       \   },
+"       \   "spec/vendor/gems/courses/lib/*_spec.rb": {
+"       \      "alternate": "vendor/gems/courses/lib/courses/{}.rb",
+"       \   }
+"       \ }
