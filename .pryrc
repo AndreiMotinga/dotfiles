@@ -1,4 +1,4 @@
-
+# this is for pry-byebug, so it has to be installed in project
 if defined?(PryByebug)
   Pry.commands.alias_command 'c', 'continue'
   Pry.commands.alias_command 's', 'step'
