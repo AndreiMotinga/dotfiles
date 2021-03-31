@@ -1,0 +1,16 @@
+cd ~
+cd
+ln -s ~/dev/dotfiles/.ctags .
+ln -s ~/dev/dotfiles/.gemrc .
+ln -s ~/dev/dotfiles/.git .
+ln -s ~/dev/dotfiles/.gitconfig .
+ln -s ~/dev/dotfiles/.gitignore .
+ln -s ~/dev/dotfiles/.gitignore_global .
+ln -s ~/dev/dotfiles/.irbrc .
+ln -s ~/dev/dotfiles/.pryrc .
+ln -s ~/dev/dotfiles/.railsrc .
+ln -s ~/dev/dotfiles/.rspec .
+ln -s ~/dev/dotfiles/.tmux.conf .
+ln -s ~/dev/dotfiles/.zshenv .
+ln -s ~/dev/dotfiles/.zshrc .
+ln -s ~/dev/dotfiles/init.vim .

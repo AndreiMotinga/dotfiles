@@ -26,9 +26,13 @@
   * Spectacle
   * Alfred
   * Fork
+  * Xcode
+  * Setup git / github
   * Brew
   * Rbenv
-  * Xcode
+  * zsh / oh-my-zsh
+  * nvim
+  * tmux
 
 ### notes
 to make `grep` work
