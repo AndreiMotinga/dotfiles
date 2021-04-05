@@ -22,6 +22,8 @@ brew install hub
 brew install the_silver_searcher # to make grep work
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+brew install postgres
+brew services start postgresql # to start postgres on login
 
 cd ~ && mkdir ~/dev && cd ~/dev && git clone git@github.com:AndreiMotinga/dotfiles.git && cd ~
 ln -s ~/dev/dotfiles/.ctags .
