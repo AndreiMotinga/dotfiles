@@ -1,10 +1,11 @@
 Apps
-  * Iterm2
   * Spectacle
   * Alfred (change system preferances for keyboard/toucpad/screens etc)
   * Fork (enable command line tools)
+  * Iterm2
   * Xcode
-  * Setup git / github
+  * Git / Github
+
 
 ```console
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" # brew
@@ -12,6 +13,8 @@ brew install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # oh-my-zsh
 brew install rbenv
 brew install neovim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim # to install vim-plug
+mkdir ~/.config/nvim && ln -s ~/dev/dotfiles/init.vim ~/.config/nvim/init.vim
 brew install tmux
 brew install hub
 brew install the_silver_searcher # to make grep work
@@ -31,7 +34,7 @@ ln -s ~/dev/dotfiles/.rspec .
 ln -s ~/dev/dotfiles/.tmux.conf .
 ln -s ~/dev/dotfiles/.zshenv .
 ln -s ~/dev/dotfiles/.zshrc .
-ln -s ~/dev/dotfiles/init.vim .
 
-chsh -s /bin/zsh # change default sh
+chsh -s /bin/zsh # change default sh to zsh
+
 ```
