@@ -27,6 +27,10 @@ brew services start postgresql # to start postgres on login
 brew install redis
 brew services start redis # to start redis on login
 
+brew tap elastic/tap
+brew install elastic/tap/elasticsearch-full
+brew services start elastic/tap/elasticsearch-full # to start on login
+
 cd ~ && mkdir ~/dev && cd ~/dev && git clone git@github.com:AndreiMotinga/dotfiles.git && cd ~
 ln -s ~/dev/dotfiles/.ctags .
 ln -s ~/dev/dotfiles/.gemrc .
