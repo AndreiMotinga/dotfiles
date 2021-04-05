@@ -16,6 +16,8 @@ brew install neovim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim # to install vim-plug
 mkdir ~/.config/nvim && ln -s ~/dev/dotfiles/init.vim ~/.config/nvim/init.vim
 brew install tmux
+brew install node
+npm install -g neovim # for neovim node
 brew install hub
 brew install the_silver_searcher # to make grep work
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
