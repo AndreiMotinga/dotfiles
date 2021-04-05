@@ -24,6 +24,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 brew install postgres
 brew services start postgresql # to start postgres on login
+brew install redis
+brew services start redis # to start redis on login
 
 cd ~ && mkdir ~/dev && cd ~/dev && git clone git@github.com:AndreiMotinga/dotfiles.git && cd ~
 ln -s ~/dev/dotfiles/.ctags .
