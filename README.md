@@ -50,6 +50,7 @@ chsh -s /bin/zsh # change default sh to zsh
 ```
 
 Iterm2
+
     * Preferences -> General -> Selection
       * v Copy to pasteboard on selection
       * v Applications in terminal may access clipboard
