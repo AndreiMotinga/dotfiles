@@ -32,4 +32,6 @@ ln -s ~/dev/dotfiles/.tmux.conf .
 ln -s ~/dev/dotfiles/.zshenv .
 ln -s ~/dev/dotfiles/.zshrc .
 ln -s ~/dev/dotfiles/init.vim .
+
+chsh -s /bin/zsh # change default sh
 ```
