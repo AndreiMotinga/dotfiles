@@ -13,6 +13,7 @@ brew install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # oh-my-zsh
 brew install rbenv
 brew install neovim
+npm install -g livedown # to run markdown preview
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim # to install vim-plug
 mkdir ~/.config/nvim && ln -s ~/dev/dotfiles/init.vim ~/.config/nvim/init.vim
 brew install tmux
