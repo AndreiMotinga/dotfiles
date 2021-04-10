@@ -90,3 +90,7 @@ export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+
+# VOYANT
+export VF_ROOT_DIR=$HOME/dev/voyant_fax
+source $VF_ROOT_DIR/scripts/devmachine/.bashrc-vf
