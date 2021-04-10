@@ -6,6 +6,9 @@ fi
 # add rbenv to path
 export PATH="$HOME/.rbenv/bin:$PATH"
 
+# prevent dir competion errors
+# https://github.com/ohmyzsh/ohmyzsh/issues/6835#issuecomment-390216875
+ZSH_DISABLE_COMPFIX=true
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 HYPHEN_INSENSITIVE="true"
