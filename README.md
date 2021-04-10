@@ -45,6 +45,7 @@ ln -s ~/dev/dotfiles/.zshenv .
 ln -s ~/dev/dotfiles/.zshrc .
 
 chsh -s /bin/zsh # change default sh to zsh
+brew tap heroku/brew && brew install heroku
 
 ```
 
