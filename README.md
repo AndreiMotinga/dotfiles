@@ -35,7 +35,6 @@ cd ~ && mkdir ~/dev && cd ~/dev && git clone git@github.com:AndreiMotinga/dotfil
 ln -s ~/dev/dotfiles/.ctags .
 ln -s ~/dev/dotfiles/.gemrc .
 ln -s ~/dev/dotfiles/.gitconfig .
-ln -s ~/dev/dotfiles/.gitignore .
 ln -s ~/dev/dotfiles/.gitignore_global .
 ln -s ~/dev/dotfiles/.irbrc .
 ln -s ~/dev/dotfiles/.pryrc .
@@ -54,3 +53,7 @@ Iterm2
     * Preferences -> General -> Selection
       * v Copy to pasteboard on selection
       * v Applications in terminal may access clipboard
+
+Fork
+
+    * Preferences -> Integration -> Install command line tools
