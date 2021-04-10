@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /Users/andrei.motinga/.gitignore
+	excludesfile = ~/dev/dotfiles/.gitignore_global
 [merge]
 	conflictstyle = diff3
 [pull]
