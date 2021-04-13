@@ -39,7 +39,6 @@ ln -s ~/dev/dotfiles/.gitconfig .
 ln -s ~/dev/dotfiles/.irbrc .
 ln -s ~/dev/dotfiles/.pryrc .
 ln -s ~/dev/dotfiles/.railsrc .
-ln -s ~/dev/dotfiles/.rspec .
 ln -s ~/dev/dotfiles/.tmux.conf .
 ln -s ~/dev/dotfiles/.zshenv .
 ln -s ~/dev/dotfiles/.zshrc .
