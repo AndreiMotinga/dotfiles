@@ -42,6 +42,7 @@ alias path='echo $PATH | tr -s ":" "\n"'
 # git
 alias hb="hub browse"
 alias gcob="git checkout -b"
+alias gcs="git checkout staging"
 
 #heroku
 alias hp="git push heroku master"
