@@ -142,8 +142,12 @@ let g:tslime_always_current_window = 1
 runtime macros/matchit.vim
 
 " prettier
+" temp fixes cause otherwise prettier doesn't work
+" https://github.com/prettier/vim-prettier/issues/268#issuecomment-731599745
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#trailing_comma = 'all'
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.rb,*.rake PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.rb,*.rake,*.erb,Gemfile PrettierAsync
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
 
 au BufNewFile,BufRead,BufReadPost *.jb set syntax=ruby
