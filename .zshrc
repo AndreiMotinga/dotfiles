@@ -52,14 +52,14 @@ alias hlw="heroku logs --dyno web -t"
 alias hlj="heroku logs --dyno worker -t"
 
 # rails
-alias mg="spring rake db:migrate && RAILS_ENV=test spring rake db:migrate"
-alias mgb="spring rake db:rollback && RAILS_ENV=test spring rake db:rollback"
+alias mg="rails db:migrate"
+alias mgb="rails db:rollback"
+alias mgt="rails db:migrate && RAILS_ENV=test rails db:migrate"
+alias mgbt="rails db:rollback && RAILS_ENV=test rails db:rollback"
 alias b="bundle"
-alias sr="spring rspec"
-alias srf="spring rspec --only-failures"
-alias r="spring rails"
-alias rr="spring rake routes |grep "
-alias rk="spring rake"
+alias sr="rspec"
+alias srf="rspec --only-failures"
+alias r="rails"
 alias be="bundle exec"
 alias bo="bundle open"
 alias bu="bundle update"
@@ -74,7 +74,7 @@ alias tl="tmux ls"
 
 # docker
 alias dc="docker-compose"
-alias dsr="docker-compose exec auth env RAILS_ENV=test bundle exec spring rspec"
+alias dsr="docker-compose exec auth env RAILS_ENV=test rspec"
 
 # yarn
 alias ys="yarn start"
