@@ -63,6 +63,7 @@ alias rk="spring rake"
 alias be="bundle exec"
 alias bo="bundle open"
 alias bu="bundle update"
+alias ba="bundle add"
 
 # tmux
 alias tn="tmux new-session -s"
