@@ -3,7 +3,7 @@ Plug 'chr4/nginx.vim' " nginx syntax highlight
 Plug 'joshdick/onedark.vim' " colorscheme
 Plug 'mattn/emmet-vim' "emmet
 Plug 'elzr/vim-json' "json
-Plug 'benekastah/neomake' " syntax check
+" Plug 'benekastah/neomake' " syntax check
 Plug 'vim-ruby/vim-ruby'
 Plug 'kana/vim-textobj-user' " nelstrom/vim-textobj-rubyblock depends on it
 Plug 'nelstrom/vim-textobj-rubyblock'
@@ -11,9 +11,9 @@ Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-rails' " rails navigation
 Plug 'janko-m/vim-test' " running tests
 Plug 'jgdavey/tslime.vim' " running tests
-Plug 'Shougo/deoplete.nvim' " text completion
+" Plug 'Shougo/deoplete.nvim' " text completion
 Plug 'christoomey/vim-tmux-navigator' "vim tmux integrated naviagation
-Plug 'tpope/vim-endwise'
+" Plug 'tpope/vim-endwise'
 Plug 'kien/ctrlp.vim' "fuzzy find files
 Plug 'jiangmiao/auto-pairs'
 Plug 'tomtom/tcomment_vim'
@@ -33,9 +33,9 @@ Plug 'rking/ag.vim'
 Plug 'gregsexton/MatchTag' "highlight matching tags in html
 Plug 'hail2u/vim-css3-syntax'
 Plug 'jelera/vim-javascript-syntax'
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'OrangeT/vim-csharp'
+" Plug 'Shougo/neosnippet.vim'
+" Plug 'Shougo/neosnippet-snippets'
+" Plug 'OrangeT/vim-csharp'
 Plug 'mxw/vim-jsx'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'shime/vim-livedown' "markdown preview, requires `npm install -g livedown`
@@ -144,10 +144,10 @@ au BufNewFile,BufRead,BufReadPost *.jb set syntax=ruby
 autocmd BufWritePre *.erb Prettier
 
 " syntax check
-autocmd! BufWritePost * Neomake
-let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_ruby_enabled_makers = ['mri', 'rubocop']
+" autocmd! BufWritePost * Neomake
+" let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
+" let g:neomake_javascript_enabled_makers = ['eslint']
+" let g:neomake_ruby_enabled_makers = ['mri', 'rubocop']
 
 " Neosnippet settings
 " Plugin key-mappings.
