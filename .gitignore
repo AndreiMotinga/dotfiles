@@ -1,1 +1,4 @@
 .cfg
+
+# dependencies
+/node_modules

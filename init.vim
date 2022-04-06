@@ -39,16 +39,7 @@ Plug 'OrangeT/vim-csharp'
 Plug 'mxw/vim-jsx'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'shime/vim-livedown' "markdown preview, requires `npm install -g livedown`
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': [
-    \ 'javascript',
-    \ 'css',
-    \ 'scss',
-    \ 'json',
-    \ 'markdown',
-    \ 'ruby',
-    \ 'html' ] }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 call plug#end()
 
@@ -145,17 +136,18 @@ runtime macros/matchit.vim
 " https://github.com/prettier/vim-prettier/issues/268#issuecomment-731599745
 let g:prettier#config#single_quote = 'true'
 let g:prettier#config#trailing_comma = 'all'
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.rb,*.rake,*.erb,Gemfile PrettierAsync
+" let g:prettier#autoformat = 0
+" autocmd BufWritePre *.erb,*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.rb,*.rake,Gemfile PrettierAsync
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
 
 au BufNewFile,BufRead,BufReadPost *.jb set syntax=ruby
+autocmd BufWritePre *.erb Prettier
 
 " syntax check
 autocmd! BufWritePost * Neomake
 let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
 let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'reek']
+let g:neomake_ruby_enabled_makers = ['mri', 'rubocop']
 
 " Neosnippet settings
 " Plugin key-mappings.
