@@ -44,22 +44,12 @@ alias hb="hub browse"
 alias gcob="git checkout -b"
 alias gcs="git checkout staging"
 
-#heroku
-alias hp="git push heroku master"
-alias hmg="heroku run rails db:migrate"
-alias hr="heroku restart"
-alias hlw="heroku logs --dyno web -t"
-alias hlj="heroku logs --dyno worker -t"
-
 # rails
-alias mg="rails db:migrate"
-alias mgb="rails db:rollback"
-alias mgt="rails db:migrate && RAILS_ENV=test rails db:migrate"
-alias mgbt="rails db:rollback && RAILS_ENV=test rails db:rollback"
+alias mg="rails db:migrate && RAILS_ENV=test rails db:migrate"
+alias mgb="rails db:rollback && RAILS_ENV=test rails db:rollback"
 alias b="bundle"
-alias sr="rspec"
-alias srf="rspec --only-failures"
-alias r="rails"
+alias br="bin/rspec"
+alias brf="bin/rspec --only-failures"
 alias be="bundle exec"
 alias bo="bundle open"
 alias bu="bundle update"
@@ -76,15 +66,8 @@ alias tl="tmux ls"
 alias dc="docker-compose"
 alias dsr="docker-compose exec auth env RAILS_ENV=test rspec"
 
-# yarn
-alias ys="yarn start"
-alias yt="yarn test"
-
-# middleman
-alias mm="middleman"
-
 # misc
-alias ng="./ngrok http 3000"
+# alias ng="./ngrok http 3000"
 bindkey -s '^G' ' | grep '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(rbenv init -)"
@@ -93,8 +76,15 @@ export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 
-# VOYANT
+# Phaxio scripts
 export VF_ROOT_DIR=$HOME/dev/voyant_fax
 source $VF_ROOT_DIR/scripts/devmachine/.bashrc-vf
+export PHAXIO_ROOT_DIR=$HOME/dev/phaxio
+# source $PHAXIO_ROOT_DIR/scripts/devmachine/phaxio-bashrc
+
 export PATH="/usr/local/opt/node@12/bin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH="/usr/local/opt/elasticsearch@6/bin:$PATH"
+export PATH="/usr/local/opt/elasticsearch@6/bin:$PATH"
+
+export  RECREATE_ES_INDICIES=false
