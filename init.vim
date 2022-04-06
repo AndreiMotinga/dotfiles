@@ -60,6 +60,8 @@ set splitright    " Puts new vsplit windows to the right of the current
 set splitbelow    " Puts new split windows to the bottom of the current
 set ic " case insensitive search
 set iskeyword+=- " Allow to autocomplete hyphenated words
+"line number colors
+hi LineNr ctermfg=DarkGrey
 
 " resize focused window
 set winwidth=84
