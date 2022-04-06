@@ -121,9 +121,7 @@ let g:airline#extensions#tabline#fnamemod = ':t' " Airline settings
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " test
-" let test#ruby#rspec#executable = 'dc exec auth env RAILS_ENV=test bundle exec spring rspec'
-let test#ruby#rspec#executable = 'rspec'
-" let test#ruby#rspec#executable = 'HEADLESS=false spring rspec'
+let test#ruby#rspec#executable = './bin/rspec'
 let test#strategy = "tslime"
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
