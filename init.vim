@@ -1,58 +1,59 @@
 call plug#begin()
-Plug 'chr4/nginx.vim' " nginx syntax highlight
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'joshdick/onedark.vim' " colorscheme
-Plug 'mattn/emmet-vim' "emmet
-Plug 'elzr/vim-json' "json
-" Plug 'benekastah/neomake' " syntax check
-Plug 'vim-ruby/vim-ruby'
-Plug 'kana/vim-textobj-user' " nelstrom/vim-textobj-rubyblock depends on it
-Plug 'nelstrom/vim-textobj-rubyblock'
-Plug 'slim-template/vim-slim'
-Plug 'tpope/vim-rails' " rails navigation
-Plug 'janko-m/vim-test' " running tests
-Plug 'jgdavey/tslime.vim' " running tests
-" Plug 'Shougo/deoplete.nvim' " text completion
-Plug 'christoomey/vim-tmux-navigator' "vim tmux integrated naviagation
-" Plug 'tpope/vim-endwise'
-Plug 'kien/ctrlp.vim' "fuzzy find files
-Plug 'jiangmiao/auto-pairs'
-Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'bling/vim-airline'
-Plug 'pbrisbin/vim-mkdir'
-Plug 'Yggdroot/indentLine' " indentation
-Plug 'tpope/vim-eunuch' " :Rename filename
-Plug 'tpope/vim-ragtag' " ^x= for <%= %> and ^x for <% %>
-Plug 'kchmck/vim-coffee-script'
-Plug 'AndrewRadev/vim-eco'
+
+"" neivim enhancements
+Plug 'tomtom/tcomment_vim' " commenting in/out
 Plug 'scrooloose/nerdtree'
-Plug 'airblade/vim-gitgutter'  " git, shows changed lines
-Plug 'godlygeek/tabular' " align things
+Plug 'bling/vim-airline'
+Plug 'kien/ctrlp.vim' "fuzzy find files
 Plug 'rking/ag.vim'
+Plug 'airblade/vim-gitgutter'  " git, shows changed lines
+Plug 'tpope/vim-fugitive' " see who made a change, commit history
+Plug 'Yggdroot/indentLine' " indentation
+Plug 'pbrisbin/vim-mkdir'
+Plug 'christoomey/vim-tmux-navigator' "vim tmux integrated naviagation
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
+
+"" rails
+Plug 'jgdavey/tslime.vim' " running tests
+Plug 'janko-m/vim-test' " running tests
+Plug 'tpope/vim-rails' " rails navigation
+
+"" langauge specific
+Plug 'elzr/vim-json' "json
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-ragtag' " ^x= for <%= %> and ^x for <% %>
+Plug 'mattn/emmet-vim' "emmet
 Plug 'gregsexton/MatchTag' "highlight matching tags in html
 Plug 'hail2u/vim-css3-syntax'
-Plug 'jelera/vim-javascript-syntax'
-" Plug 'Shougo/neosnippet.vim'
-" Plug 'Shougo/neosnippet-snippets'
-" Plug 'OrangeT/vim-csharp'
-Plug 'mxw/vim-jsx'
+Plug 'chr4/nginx.vim' " nginx syntax highlight
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'shime/vim-livedown' "markdown preview, requires `npm install -g livedown`
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'slim-template/vim-slim'
+
+"" tools
+"Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 call plug#end()
 
+"" settings
+colorscheme onedark
 set hidden "move between unsaved files
 set clipboard=unnamed "so I can copy in and out
 set colorcolumn=95
-colorscheme onedark
+set termguicolors
 set tabstop=2
+set softtabstop=2
 set shiftwidth=2
 set expandtab
+set smarttab
 set t_Co=256
 set list listchars=tab:»·,trail:·,nbsp:· " Display extra whitespace
 set nobackup
+set nowritebackup
 set noswapfile
 set number
 set smartcase
@@ -60,28 +61,49 @@ set splitright    " Puts new vsplit windows to the right of the current
 set splitbelow    " Puts new split windows to the bottom of the current
 set ic " case insensitive search
 set iskeyword+=- " Allow to autocomplete hyphenated words
-"line number colors
+" line number colors
 hi LineNr ctermfg=DarkGrey
-
 " resize focused window
 set winwidth=84
 set winheight=5
 set winminheight=5
 set winheight=999
+" persist undo after write
+if has('persistent_undo')      "check if your vim version supports it
+  set undofile                 "turn on the feature
+  set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
+endif
+set langmap=ЖйцукенгшщзфывапролдячсмитьхъЙЦУКЕНГШЩЗФЫВАПРОЛДЯЧСМИТЬ;:qwertyuiopasdfghjklzxcvbnm[]QWERTYUIOPASDFGHJKLZXCVBNM " russian layout
 
-let g:loaded_ruby_provider = 1
+iabbrev bp binding.pry
+autocmd BufWritePre * :%s/\s\+$//e " Remove trailing white space on save
+autocmd VimResized * :wincmd = " automatically rebalance windows on vim resize
 
-" mappings
+augroup vimrcEx
+ autocmd!
+ " When editing a file, always jump to the last known cursor position.
+ " Don't do it for commit messages, when the position is invalid, or when
+ " inside an event handler (happens when dropping a file on gvim).
+ autocmd BufReadPost *
+   \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+   \   exe "normal g`\"" |
+   \ endif
+ " Set syntax highlighting for specific file types
+ autocmd BufRead,BufNewFile Appraisals set filetype=ruby
+ autocmd BufRead,BufNewFile *.md set filetype=markdown
+ autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
+augroup END
+
+" trigger `autoread` when files changes on disk
+set autoread
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+" notification after file change
+autocmd FileChangedShellPost *
+ \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+
+"" mappings
 let mapleader = ","
 let g:mapleader = ","
-
-" RSpec.vim mappings
-nnoremap <Leader>t :wa<cr>:TestFile<CR>
-nnoremap <Leader>s :wa<cr>:TestNearest<CR>
-nnoremap <Leader>l :wa<cr>:TestLast<CR>
-nnoremap <Leader>a :wa<cr>:TestSuite<CR>
-nnoremap <Leader>g :wa<cr>:TestVisit<CR>
-
 nnoremap <leader>w :w<CR>
 nnoremap <leader>n :bn<CR>
 nnoremap <leader>m :bp<CR>
@@ -91,9 +113,6 @@ nnoremap <leader>r :source ~/dev/dotfiles/init.vim<CR>
 nnoremap <leader>et :e ~/dev/dotfiles/todo<cr>
 nnoremap <leader>ev :e ~/dev/dotfiles/init.vim<cr>
 nnoremap <leader>ez :e ~/dev/dotfiles/.zshrc<cr>
-
-nnoremap <leader>f :NERDTreeFind<CR>
-nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <space><space> :b#<CR>
 nnoremap 0 ^
 nnoremap k gk
@@ -101,84 +120,57 @@ nnoremap j gj
 inoremap jk <Esc>
 inoremap uu <Esc>u
 nnoremap === mmgg=G`m^zz`<Esc> :w<CR>
+"disable Ex mode
+map q: <Nop>
+nnoremap Q <nop>
+nnoremap бц <Esc>:w<cr>
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
+"" nerdtree
+let NERDTreeShowHidden=1 " show .dotfiles
+nnoremap <leader>f :NERDTreeFind<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
+
+"" vim-tmux-navigator
+let g:tmux_navigator_no_mappings = 1 " vim tmux integration
 nnoremap <C-j> :TmuxNavigateDown<cr>
 nnoremap <C-k> :TmuxNavigateUp<cr>
 nnoremap <C-l> :TmuxNavigateRight<cr>
 nnoremap <C-h> :TmuxNavigateLeft<cr>
-nnoremap бц <Esc>:w<cr>
 
-"disable Ex mode
-map q: <Nop>
-nnoremap Q <nop>
-
-set langmap=ЖйцукенгшщзфывапролдячсмитьхъЙЦУКЕНГШЩЗФЫВАПРОЛДЯЧСМИТЬ;:qwertyuiopasdfghjklzxcvbnm[]QWERTYUIOPASDFGHJKLZXCVBNM " russian layout
-
-let g:tmux_navigator_no_mappings = 1 " vim tmux integration
-let g:deoplete#enable_at_startup = 1 " Use deoplete.
+" vim-airline
 let g:airline#extensions#tabline#enabled = 1 " Airline settings
 let g:airline#extensions#tabline#fnamemod = ':t' " Airline settings
-let NERDTreeShowHidden=1 " show .dotfiles
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
-" test
+"" tslime
 let test#ruby#rspec#executable = './bin/rspec'
 let test#strategy = "tslime"
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
 
-" to enable vim ruby object
-runtime macros/matchit.vim
+"" vim-test
+nnoremap <Leader>t :wa<cr>:TestFile<CR>
+nnoremap <Leader>s :wa<cr>:TestNearest<CR>
+nnoremap <Leader>l :wa<cr>:TestLast<CR>
+nnoremap <Leader>a :wa<cr>:TestSuite<CR>
+nnoremap <Leader>g :wa<cr>:TestVisit<CR>
 
-" prettier
-" temp fixes cause otherwise prettier doesn't work
-" https://github.com/prettier/vim-prettier/issues/268#issuecomment-731599745
-let g:prettier#config#single_quote = 'true'
-let g:prettier#config#trailing_comma = 'all'
-" let g:prettier#autoformat = 0
-" autocmd BufWritePre *.erb,*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.rb,*.rake,Gemfile PrettierAsync
-" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
+"" vim-prettier
+"" temp fixes cause otherwise prettier doesn't work
+"" https://github.com/prettier/vim-prettier/issues/268#issuecomment-731599745
+"let g:prettier#config#single_quote = 'true'
+"let g:prettier#config#trailing_comma = 'all'
+"" let g:prettier#autoformat = 0
+"" autocmd BufWritePre *.erb,*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.rb,*.rake,Gemfile PrettierAsync
+"" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
+"au BufNewFile,BufRead,BufReadPost *.jb set syntax=ruby
+"autocmd BufWritePre *.erb Prettier
+"
 
-au BufNewFile,BufRead,BufReadPost *.jb set syntax=ruby
-autocmd BufWritePre *.erb Prettier
-
-" syntax check
-" autocmd! BufWritePost * Neomake
-" let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
-" let g:neomake_javascript_enabled_makers = ['eslint']
-" let g:neomake_ruby_enabled_makers = ['mri', 'rubocop']
-
-" Neosnippet settings
-" Plugin key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
-" persist undo after write
-if has('persistent_undo')      "check if your vim version supports it
-  set undofile                 "turn on the feature
-  set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
-endif
-
-"indentline
+"" indentline
 let g:indentLine_color_term = 240
 
-" Ctrlp
+"" ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 " ignore infinite db/migrate in dialogEDU for easer navigation
 let g:ctrlp_custom_ignore = 'db/migrate'
@@ -194,66 +186,100 @@ set wildignore+=*.zip                 " ctrlp - ignore .zip files
 set wildignore+=*.pdf                 " ctrlp - ignore .pdf files
 set wildignore+=*/node_modules/*      " ctrlp - ignore node modules
 set wildignore+=*/bower_components/*  " ctrlp - ignore bower compone
-set wildignore+=*/google-maps-utility-library-v3/*
 
 
-" abbreviations
-iabbrev r require
-iabbrev rr require_relative
-iabbrev cl console.log()
-iabbrev bp binding.pry
-iabbrev init initialize
-
-autocmd BufWritePre * :%s/\s\+$//e " Remove trailing white space on save
-autocmd VimResized * :wincmd = " automatically rebalance windows on vim resize
-
-augroup vimrcEx
-  autocmd!
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it for commit messages, when the position is invalid, or when
-  " inside an event handler (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
-
-  " Set syntax highlighting for specific file types
-  autocmd BufRead,BufNewFile Appraisals set filetype=ruby
-  autocmd BufRead,BufNewFile *.md set filetype=markdown
-  autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
-augroup END
-
+"" ag
 if executable('ag')
   " Note we extract the column as well as the file and line number
   set grepprg=ag\ --nogroup\ --column
   set grepformat=%f:%l:%m
 endif
 
-" let g:rails_projections = {
-"       \  "vendor/gems/courses/app/models/courses/*.rb": {
-"       \      "alternate": "spec/vendor/gems/courses/models/{}_spec.rb",
-"       \   },
-"       \   "spec/vendor/gems/courses/models/*_spec.rb": {
-"       \      "alternate": "vendor/gems/courses/app/models/courses/{}.rb",
-"       \   },
-"       \  "vendor/gems/courses/app/services/*.rb": {
-"       \      "alternate": "spec/vendor/gems/courses/services/{}_spec.rb",
-"       \   },
-"       \   "spec/vendor/gems/courses/services/*_spec.rb": {
-"       \      "alternate": "vendor/gems/courses/app/services/{}.rb",
-"       \   },
-"       \  "vendor/gems/courses/lib/courses/*.rb": {
-"       \      "alternate": "spec/vendor/gems/courses/lib/{}_spec.rb",
-"       \   },
-"       \   "spec/vendor/gems/courses/lib/*_spec.rb": {
-"       \      "alternate": "vendor/gems/courses/lib/courses/{}.rb",
-"       \   }
-"       \ }
+"" coc
+let g:coc_global_extesions = [
+      \ 'coc-tsserver',
+      \ 'coc-solargraph',
+      \ ]
+
+"set cmdheight=2 " Give more space for displaying messages.
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+set shortmess+=c " Don't pass messages to |ins-completion-menu|.
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+"" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+"" Use L to show documentation in preview window.
+nnoremap <silent> L :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+ if (index(['vim','help'], &filetype) >= 0)
+   execute 'h '.expand('<cword>')
+ elseif (coc#rpc#ready())
+   call CocActionAsync('doHover')
+ else
+   execute '!' . &keywordprg . " " . expand('<cword>')
+ endif
+endfunction
+
+"" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
 "
-" trigger `autoread` when files changes on disk
-set autoread
-autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
-" notification after file change
-autocmd FileChangedShellPost *
-  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+augroup mygroup
+ autocmd!
+ " Setup formatexpr specified filetype(s).
+ autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+ " Update signature help on jump placeholder.
+ autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Map function and class text objects
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+
+" Remap <C-f> and <C-b> for scroll float windows/popups.
+if has('nvim-0.4.0') || has('patch-8.2.0750')
+ nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+ nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+ inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+ inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+ vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+ vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+endif
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocActionAsync('format')
+
+nmap <leader>do <Plug>(coc-codeaction)
