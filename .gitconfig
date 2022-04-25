@@ -7,3 +7,5 @@
 [user]
 	name = Andrei Motinga
 	email = andrei.motinga@inteliquent.com
+[hub]
+	protocol = shh
