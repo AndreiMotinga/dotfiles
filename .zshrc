@@ -48,7 +48,6 @@ alias gcs="git checkout staging"
 alias mg="rails db:migrate && RAILS_ENV=test rails db:migrate"
 alias mgb="rails db:rollback && RAILS_ENV=test rails db:rollback"
 alias b="bundle"
-alias br="bin/rspec"
 alias brf="bin/rspec --only-failures"
 alias be="bundle exec"
 alias bo="bundle open"
@@ -71,20 +70,10 @@ alias dsr="docker-compose exec auth env RAILS_ENV=test rspec"
 bindkey -s '^G' ' | grep '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(rbenv init -)"
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/sbin:$PATH"
-export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 
-# Phaxio scripts
-export VF_ROOT_DIR=$HOME/dev/voyant_fax
-source $VF_ROOT_DIR/scripts/devmachine/.bashrc-vf
-export PHAXIO_ROOT_DIR=$HOME/dev/phaxio
-# source $PHAXIO_ROOT_DIR/scripts/devmachine/phaxio-bashrc
+export AWS_PROFILE=default
 
-export PATH="/usr/local/opt/node@12/bin:$PATH"
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-export PATH="/usr/local/opt/elasticsearch@6/bin:$PATH"
-export PATH="/usr/local/opt/elasticsearch@6/bin:$PATH"
-
-export  RECREATE_ES_INDICIES=false
+# node version manager generated config
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
