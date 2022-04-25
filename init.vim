@@ -34,9 +34,6 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'shime/vim-livedown' "markdown preview, requires `npm install -g livedown`
 Plug 'slim-template/vim-slim'
 
-"" tools
-"Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-
 call plug#end()
 
 "" settings
@@ -198,6 +195,7 @@ endif
 "" coc
 let g:coc_global_extesions = [
       \ 'coc-tsserver',
+      \ 'coc-prettier',
       \ 'coc-solargraph',
       \ ]
 
