@@ -139,6 +139,9 @@ nnoremap <C-h> :TmuxNavigateLeft<cr>
 let g:airline#extensions#tabline#enabled = 1 " Airline settings
 let g:airline#extensions#tabline#fnamemod = ':t' " Airline settings
 
+" vim-json
+let g:vim_json_syntax_conceal = 0
+
 "" tslime
 let test#ruby#rspec#executable = './bin/rspec'
 let test#strategy = "tslime"
