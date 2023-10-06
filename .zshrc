@@ -38,6 +38,7 @@ alias vt="nvim ~/dev/dotfiles/.tmux.conf"
 alias c="clear"
 alias \$=""
 alias path='echo $PATH | tr -s ":" "\n"'
+alias pcat='pygmentize -f terminal256 -O style=native -g'
 
 # git
 alias hb="hub browse"
