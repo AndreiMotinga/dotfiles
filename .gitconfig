@@ -7,8 +7,6 @@
 [user]
 	name = Andrei Motinga
 	email = andrew.motinga@gmail.com
-[hub]
-	protocol = shh
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
