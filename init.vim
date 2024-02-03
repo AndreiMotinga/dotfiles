@@ -10,7 +10,7 @@ Plug 'kien/ctrlp.vim' "fuzzy find files
 Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'  " git, shows changed lines
 Plug 'tpope/vim-fugitive' " see who made a change, commit history
-Plug 'Yggdroot/indentLine' " indentation
+" Plug 'Yggdroot/indentLine' " indentation
 Plug 'pbrisbin/vim-mkdir'
 Plug 'christoomey/vim-tmux-navigator' "vim tmux integrated naviagation
 Plug 'jiangmiao/auto-pairs'
@@ -156,8 +156,8 @@ nnoremap <Leader>l :wa<cr>:TestLast<CR>
 nnoremap <Leader>a :wa<cr>:TestSuite<CR>
 nnoremap <Leader>g :wa<cr>:TestVisit<CR>
 
-"" indentline
-let g:indentLine_color_term = 240
+" " indentline
+" let g:indentLine_color_term = 240
 
 "" ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
