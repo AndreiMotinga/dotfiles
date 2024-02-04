@@ -44,6 +44,7 @@ alias pcat='pygmentize -f terminal256 -O style=native -g'
 alias hb="hub browse"
 alias gcob="git checkout -b"
 alias gcs="git checkout staging"
+alias ghb="gh browse"
 
 # rails
 alias mg="rails db:migrate && RAILS_ENV=test rails db:migrate"
