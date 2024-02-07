@@ -32,7 +32,8 @@ cdpath=($HOME/dev;$HOME/dev/ezworks)
 alias v="nvim"
 alias vd="cd ~/dev/dotfiles"
 alias vz="nvim ~/dev/dotfiles/.zshrc"
-alias vt="nvim ~/dev/dotfiles/.tmux.conf"
+alias vt="nvim ~/.config/nvim/todo"
+alias ,ev="nvim ~/.config/nvim/init.lua"
 
 # zsh
 alias c="clear"
@@ -79,14 +80,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# installing pg gem mac
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/libpq/lib/pkgconfig"
+# # installing pg gem mac
+# export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+# export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
+# export PKG_CONFIG_PATH="/opt/homebrew/opt/libpq/lib/pkgconfig"
 
 # installing mysql gem mac
-export LDFLAGS="-L/opt/homebrew/opt/mysql@5.7/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/mysql@5.7/include"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql@5.7/lib/pkgconfig"
+# export LDFLAGS="-L/opt/homebrew/opt/mysql@5.7/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/mysql@5.7/include"
+# export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql@5.7/lib/pkgconfig"
 export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
