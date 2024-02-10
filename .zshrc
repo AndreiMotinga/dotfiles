@@ -13,7 +13,7 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 HYPHEN_INSENSITIVE="true"
 
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions docker docker-compose)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions docker docker-compose tmux)
 # source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 
@@ -54,11 +54,12 @@ alias bo="bundle open"
 alias bu="bundle update"
 
 # tmux
-alias tn="tmux new-session -s"
-alias tk="tmux kill-session -t"
-alias ta="tmux attach -t"
-alias ts="tmux switch -t"
-alias tl="tmux ls"
+# TODO : remove after i'm used to plugin
+# alias tn="tmux new-session -s"
+# alias tk="tmux kill-session -t"
+# alias ta="tmux attach -t"
+# alias ts="tmux switch -t"
+# alias tl="tmux ls"
 
 # misc
 # alias ng="./ngrok http 3000"
