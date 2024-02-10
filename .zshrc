@@ -13,7 +13,7 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 HYPHEN_INSENSITIVE="true"
 
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions docker docker-compose tmux bundler)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions docker docker-compose bundler)
 # source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 
@@ -50,12 +50,10 @@ alias mgb="rails db:rollback && RAILS_ENV=test rails db:rollback"
 alias brf="bin/rspec --only-failures"
 
 # tmux
-# TODO : remove after i'm used to plugin
-# alias tn="tmux new-session -s"
-# alias tk="tmux kill-session -t"
-# alias ta="tmux attach -t"
-# alias ts="tmux switch -t"
-# alias tl="tmux ls"
+alias tn="tmux new-session -s"
+alias tk="tmux kill-session -t"
+alias ta="tmux attach -t"
+alias tl="tmux ls"
 
 # misc
 # alias ng="./ngrok http 3000"
