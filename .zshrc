@@ -42,7 +42,6 @@ alias pcat='pygmentize -f terminal256 -O style=native -g'
 
 # git
 alias ghb="gh browse"
-alias gcob="git checkout -b"
 alias gcs="git checkout staging"
 
 # rails
