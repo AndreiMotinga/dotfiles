@@ -17,6 +17,10 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions docker docker-compose b
 # source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 
+git-replace() {
+  git grep -l "$1" | xargs sed -i '' -e "s/$1/$2/g"
+}
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
