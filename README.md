@@ -1,9 +1,10 @@
 Apps
-  * Spectacle
-  * Alfred (change system preferances for keyboard/toucpad/screens etc)
-  * Fork (enable command line tools)
-  * Iterm2
-  * Xcode
+
+- Spectacle
+- Alfred (change system preferances for keyboard/toucpad/screens etc)
+- Fork (enable command line tools)
+- Iterm2
+- Xcode
 
 ```console
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" # brew
@@ -25,6 +26,7 @@ ln -s ~/dev/dotfiles/.tmux.conf .
 ln -s ~/dev/dotfiles/.zshenv .
 ln -s ~/dev/dotfiles/.zshrc .
 
+brew install fzf
 brew install rbenv
 brew install nvm
 nvm install stable
@@ -35,7 +37,7 @@ brew install redis
 brew tap heroku/brew && brew install heroku
 brew install neovim
 brew install ripgrep # for telescope
-brew install fd      # for telescope
+brew install fd      # for telescope, zfz
 git clone git@github.com:AndreiMotinga/nvim.git ~/.config/nvim
 
 ```

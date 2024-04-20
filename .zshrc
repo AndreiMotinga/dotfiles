@@ -13,7 +13,7 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 HYPHEN_INSENSITIVE="true"
 
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions docker docker-compose bundler)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions docker docker-compose bundler fzf fd)
 # source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 
@@ -28,15 +28,16 @@ else
   export EDITOR='nvim'
 fi
 
-# easier navigation
+# # easier navigation
 setopt auto_cd
-cdpath=($HOME/dev;$HOME/dev/ezworks)
+cdpath=($HOME/dev;$HOME/dev/**)
 
 # vim
 alias v="nvim"
 alias vd="cd ~/dev/dotfiles"
 alias vv="cd ~/.config/nvim"
 alias vz="v ~/dev/dotfiles/.zshrc"
+alias vt="v ~/dev/dotfiles/todo"
 
 # zsh
 alias c="clear"
