@@ -36,6 +36,7 @@ cdpath=($HOME/dev;$HOME/dev/ezworks)
 alias v="nvim"
 alias vd="cd ~/dev/dotfiles"
 alias vv="cd ~/.config/nvim"
+alias vz="v ~/dev/dotfiles/.zshrc"
 
 # zsh
 alias c="clear"
