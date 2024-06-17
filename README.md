@@ -28,6 +28,7 @@ ln -s ~/dev/dotfiles/.zshrc .
 
 brew install fzf
 brew install rbenv
+brew install node
 brew install nvm
 nvm install stable
 brew install tmux
