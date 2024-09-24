@@ -46,7 +46,6 @@ git clone git@github.com:AndreiMotinga/nvim.git ~/.config/nvim
 Iterm2
 
     * Settings -> General -> Selection
-      * v Copy to pasteboard on selection
       * v Applications in terminal may access clipboard
 
 Fork
