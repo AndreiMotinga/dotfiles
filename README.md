@@ -1,6 +1,6 @@
 Apps
 
-- Spectacle
+- Rectangle
 - Alfred (change system preferances for keyboard/toucpad/screens etc)
 - Fork (enable command line tools)
 - Iterm2
