@@ -17,11 +17,9 @@ brew install git
 #    https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 
 cd ~ && mkdir ~/dev && cd ~/dev && git clone git@github.com:AndreiMotinga/dotfiles.git && cd ~
-ln -s ~/dev/dotfiles/.gemrc .
 ln -s ~/dev/dotfiles/.gitconfig .
 ln -s ~/dev/dotfiles/.irbrc .
 ln -s ~/dev/dotfiles/.pryrc .
-ln -s ~/dev/dotfiles/.railsrc .
 ln -s ~/dev/dotfiles/.tmux.conf .
 ln -s ~/dev/dotfiles/.zshenv .
 ln -s ~/dev/dotfiles/.zshrc .
