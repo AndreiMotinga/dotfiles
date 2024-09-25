@@ -1,10 +1,10 @@
 Apps
 
 - Rectangle
-- Alfred (change system preferances for keyboard/toucpad/screens etc)
-- Fork (enable command line tools)
+- Alfred
 - Iterm2
 - Xcode
+- Fork
 
 ```console
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" # brew
@@ -44,9 +44,5 @@ git clone git@github.com:AndreiMotinga/nvim.git ~/.config/nvim
 Iterm2
 
     * Settings -> General -> Selection
-      * v Applications in terminal may access clipboard
+        * v Applications in terminal may access clipboard
     * Settings → Profiles → Text -> Nerd font
-
-Fork
-
-    * Settings -> Integration -> Install command line tools
