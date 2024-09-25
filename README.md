@@ -45,7 +45,8 @@ Iterm2
 
     * Settings -> General -> Selection
       * v Applications in terminal may access clipboard
+    * Settings → Profiles → Text -> Nerd font
 
 Fork
 
-    * Preferences -> Integration -> Install command line tools
+    * Settings -> Integration -> Install command line tools
