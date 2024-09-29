@@ -60,7 +60,7 @@ alias tn="tmux new-session -s"
 alias tk="tmux kill-session -t"
 alias ta="tmux attach -t"
 alias tl="tmux ls"
-alias fork='open -a "Fork"'
+alias lg='lazygit'
 
 # misc
 # alias ng="./ngrok http 3000"

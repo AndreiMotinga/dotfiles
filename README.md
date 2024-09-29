@@ -4,7 +4,6 @@ Apps
 - Alfred
 - Iterm2
 - Xcode
-- Fork
 
 ```console
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" # brew
@@ -27,6 +26,7 @@ ln -s ~/dev/dotfiles/.zshrc .
 brew install fzf
 brew install rbenv
 brew install node
+brew install lazygit
 brew install nvm
 nvm install stable
 brew install tmux
