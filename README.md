@@ -54,3 +54,10 @@ NOTES:
 
 looks like for now it's not portable, so you might need to
 -> https://github.com/jesseduffield/lazygit/issues/155#issuecomment-2260986940
+
+##### tailwind LSP.
+
+for lsp to work you might need
+
+1. global npm installation and npm install -g tailwindcss
+2. tailwind.config.js file in root dir
