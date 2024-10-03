@@ -27,6 +27,7 @@ brew install fzf
 brew install rbenv
 brew install node
 brew install lazygit
+  brew install git-delta
 brew install nvm
 nvm install stable
 brew install tmux
@@ -46,3 +47,10 @@ Iterm2
     * Settings -> General -> Selection
         * v Applications in terminal may access clipboard
     * Settings → Profiles → Text -> Nerd font
+
+NOTES:
+
+##### lazygit split diff
+
+looks like for now it's not portable, so you might need to
+-> https://github.com/jesseduffield/lazygit/issues/155#issuecomment-2260986940
