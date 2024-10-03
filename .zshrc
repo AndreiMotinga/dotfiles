@@ -1,6 +1,6 @@
 # brew autocompletion. more at https://docs.brew.sh/Shell-Completion
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+    FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
 # add rbenv to path
@@ -18,14 +18,14 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions docker docker-compose b
 source $ZSH/oh-my-zsh.sh
 
 git-replace() {
-  git grep -l "$1" | xargs sed -i '' -e "s/$1/$2/g"
+    git grep -l "$1" | xargs sed -i '' -e "s/$1/$2/g"
 }
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+    export EDITOR='vim'
 else
-  export EDITOR='nvim'
+    export EDITOR='nvim'
 fi
 
 # # easier navigation
