@@ -60,6 +60,7 @@ alias tn="tmux new-session -s"
 alias tk="tmux kill-session -t"
 alias ta="tmux attach -t"
 alias tl="tmux ls"
+alias l="gls -la --group-directories-first --color='auto'"
 alias lg='lazygit'
 alias fork="open -a 'Fork' ."
 

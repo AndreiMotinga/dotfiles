@@ -34,6 +34,7 @@ brew tap heroku/brew && brew install heroku
 brew install neovim
 brew install ripgrep # for telescope
 brew install fd      # for telescope, zfz
+brew install coreutils # add gls to beef up 'ls -a'
 git clone git@github.com:AndreiMotinga/nvim.git ~/.config/nvim
 
 ```
