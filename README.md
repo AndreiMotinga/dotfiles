@@ -1,13 +1,10 @@
-Apps
-
-- Rectangle
-- Alfred
-- Iterm2
-- Xcode
-
 ```console
+xcode-select --install
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" # brew
 brew install zsh
+brew install --cask iterm2
+brew install --cask rectangle
+brew install --cask alfred
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # oh-my-zsh
 chsh -s /bin/zsh # change default sh to zsh
 
@@ -27,9 +24,8 @@ brew install fzf
 brew install rbenv
 brew install node
 brew install lazygit
-  brew install git-delta
-brew install nvm
-nvm install stable
+brew install git-delta
+brew install nvm && nvm install stable
 brew install tmux
 brew install gh
 brew install postgres
