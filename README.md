@@ -4,8 +4,9 @@
 brew install --cask iterm2
 brew install --cask rectangle
 brew install --cask alfred
+brew install --cask fork
+brew install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # oh-my-zsh
-chsh -s /bin/zsh # change default sh to zsh
 
 brew install git
 # setup github ssh keys
