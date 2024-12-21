@@ -13,4 +13,8 @@ end
 require 'amazing_print'
 AmazingPrint.pry!
 include FactoryGirl::Syntax::Methods if Object.const_defined?('FactoryGirl')
-include FactoryBot::Syntax::Methods if Object.const_defined?('FactoryBot')
+
+
+# causes issue on
+# binding.pry and continue
+# include FactoryBot::Syntax::Methods if Object.const_defined?('FactoryBot')
