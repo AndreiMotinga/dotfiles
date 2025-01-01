@@ -13,8 +13,7 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 HYPHEN_INSENSITIVE="true"
 
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions docker docker-compose bundler fzf)
-# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions docker docker-compose bundler fzf zsh-nvm-auto-switch)
 source $ZSH/oh-my-zsh.sh
 
 git-replace() {
@@ -56,6 +55,7 @@ alias mgb="rails db:rollback && RAILS_ENV=test rails db:rollback"
 alias brf="bin/rspec --only-failures"
 
 # tmux
+alias mux="tmuxinator"
 alias tn="tmux new-session -s"
 alias tk="tmux kill-session -t"
 alias ta="tmux attach -t"

@@ -7,6 +7,7 @@ brew install --cask alfred
 brew install --cask fork
 brew install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # oh-my-zsh
+git clone https://github.com/aspirewit/zsh-nvm-auto-switch ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-nvm-auto-switch
 
 brew install git
 # setup github ssh keys
@@ -27,6 +28,7 @@ brew install lazygit
 brew install git-delta
 brew install nvm && nvm install stable
 brew install tmux
+brew install tmuxinator
 brew install gh
 brew install postgres
 brew install redis
