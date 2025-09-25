@@ -7,9 +7,9 @@ if defined?(PryByebug)
   Pry.commands.alias_command 'e', 'edit -mr'
 end
 
-Pry::Commands.command(/^$/, 'repeat last command') do
-  pry_instance.run_command Pry.history.to_a.last
-end
+# Pry::Commands.command(/^$/, 'repeat last command') do
+#   pry_instance.run_command Pry.history.to_a.last
+# end
 
 require 'amazing_print'
 AmazingPrint.pry!
