@@ -85,6 +85,7 @@ alias be="bundle exec"
 alias bi="bundle install"
 alias bu="bundle update"
 alias kub=kubectl exec -it deployment/web -- rails c
+alias windsurf="/Applications/Windsurf.app/Contents/MacOS/Electron"
 
 # misc
 # alias ng="./ngrok http 3000"
