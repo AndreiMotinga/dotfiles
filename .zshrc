@@ -13,7 +13,7 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 HYPHEN_INSENSITIVE="true"
 
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions docker docker-compose bundler fzf zsh-nvm-auto-switch)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions docker docker-compose fzf zsh-nvm-auto-switch)
 source $ZSH/oh-my-zsh.sh
 
 git-replace() {
