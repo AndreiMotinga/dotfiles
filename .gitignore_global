@@ -2,3 +2,4 @@ todo
 foo
 notes
 *.DS_Store
+bin/console
