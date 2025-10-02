@@ -81,6 +81,9 @@ alias tl="tmux ls"
 alias l="gls -la --group-directories-first --color='auto'"
 alias lg='lazygit'
 alias fork="open -a 'Fork' ."
+alias be="bundle exec"
+alias bi="bundle install"
+alias bu="bundle update"
 
 # misc
 # alias ng="./ngrok http 3000"
