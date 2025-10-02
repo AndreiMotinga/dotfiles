@@ -27,6 +27,22 @@ else
     export EDITOR='nvim'
 fi
 
+switch() {
+  if brew services list | grep -q "postgresql@15.*started"; then
+    echo "Switching from PostgreSQL@15 → PostgreSQL@16"
+    brew services stop postgresql@15
+    brew services start postgresql@16
+  elif brew services list | grep -q "postgresql@16.*started"; then
+    echo "Switching from PostgreSQL@16 → PostgreSQL@15"
+    brew services stop postgresql@16
+    brew services start postgresql@15
+  else
+    echo "Neither PostgreSQL@15 nor PostgreSQL@16 is running."
+    echo "Starting PostgreSQL@15 by default..."
+    brew services start postgresql@15
+  fi
+}
+
 # # easier navigation
 setopt auto_cd
 cdpath=($HOME/dev;$HOME/dev/**)
