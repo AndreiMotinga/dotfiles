@@ -62,6 +62,7 @@ alias pcat='pygmentize -f terminal256 -O style=native -g'
 
 # git
 alias ghb="gh browse"
+alias ghv="gh pr view --web"
 alias gcs="git checkout staging"
 alias gclean="git reset --hard && git clean -df"
 
