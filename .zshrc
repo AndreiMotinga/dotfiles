@@ -70,6 +70,7 @@ alias gclean="git reset --hard && git clean -df"
 alias mg="rails db:migrate && RAILS_ENV=test rails db:migrate"
 alias mgb="rails db:rollback && RAILS_ENV=test rails db:rollback"
 alias brf="bin/rspec --only-failures"
+alias rp="bin/rails parallel:spec"
 
 # tmux
 alias mux="tmuxinator"
