@@ -3,3 +3,4 @@ foo
 notes
 *.DS_Store
 bin/console
+latest.dump
