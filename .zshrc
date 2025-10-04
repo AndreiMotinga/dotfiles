@@ -3,9 +3,6 @@ if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
-# add rbenv to path
-export PATH="$HOME/.rbenv/bin:$PATH"
-
 # prevent dir competion errors
 # https://github.com/ohmyzsh/ohmyzsh/issues/6835#issuecomment-390216875
 ZSH_DISABLE_COMPFIX=true
@@ -100,7 +97,7 @@ alias windsurf="/Applications/Windsurf.app/Contents/MacOS/Electron"
 # alias ng="./ngrok http 3000"
 bindkey -s '^G' ' | grep '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 export AWS_PROFILE=default
 
