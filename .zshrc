@@ -10,7 +10,7 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 HYPHEN_INSENSITIVE="true"
 
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions docker docker-compose fzf zsh-nvm-auto-switch)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions docker docker-compose fzf zsh-nvm)
 source $ZSH/oh-my-zsh.sh
 
 git-replace() {
@@ -97,11 +97,5 @@ alias windsurf="/Applications/Windsurf.app/Contents/MacOS/Electron"
 # alias ng="./ngrok http 3000"
 bindkey -s '^G' ' | grep '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# eval "$(rbenv init -)"
 
 export AWS_PROFILE=default
-
-# node version manager generated config
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
