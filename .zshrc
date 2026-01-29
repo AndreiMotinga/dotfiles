@@ -1,15 +1,10 @@
-# brew autocompletion. more at https://docs.brew.sh/Shell-Completion
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-fi
-
-# prevent dir competion errors
-# https://github.com/ohmyzsh/ohmyzsh/issues/6835#issuecomment-390216875
-ZSH_DISABLE_COMPFIX=true
+# # prevent dir competion errors
+# # https://github.com/ohmyzsh/ohmyzsh/issues/6835#issuecomment-390216875
+# ZSH_DISABLE_COMPFIX=true
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell"
-HYPHEN_INSENSITIVE="true"
-
+# HYPHEN_INSENSITIVE="true"
+#
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions docker docker-compose fzf zsh-nvm)
 source $ZSH/oh-my-zsh.sh
 
@@ -54,6 +49,7 @@ setopt auto_cd
 cdpath=($HOME/dev;$HOME/dev/**)
 
 # vim
+alias c="clear"
 alias v="nvim"
 alias vd="cd ~/dev/dotfiles"
 alias vv="cd ~/.config/nvim"
@@ -61,7 +57,6 @@ alias vz="v ~/dev/dotfiles/.zshrc"
 alias vt="v ~/dev/dotfiles/todo"
 
 # zsh
-alias c="clear"
 alias \$=""
 alias path='echo $PATH | tr -s ":" "\n"'
 alias pcat='pygmentize -f terminal256 -O style=native -g'
@@ -73,8 +68,10 @@ alias gcs="git checkout staging"
 alias gclean="git reset --hard && git clean -df"
 
 # rails
-alias mg="rails db:migrate && RAILS_ENV=test rails db:migrate"
-alias mgb="rails db:rollback && RAILS_ENV=test rails db:rollback"
+# alias mg="rails db:migrate && RAILS_ENV=test rails db:migrate"
+# alias mgb="rails db:rollback && RAILS_ENV=test rails db:rollback"
+alias mg="rails db:migrate"
+alias mgb="rails db:rollback"
 alias brf="bin/rspec --only-failures"
 alias rp="bin/rails parallel:spec"
 
@@ -99,3 +96,5 @@ bindkey -s '^G' ' | grep '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export AWS_PROFILE=default
+
+alias knowde-shoryuken="bundle exec shoryuken -R -C config/shoryuken.yml -r ./app/workers/consumers -q localstack-queue"
