@@ -19,31 +19,6 @@ else
     export EDITOR='nvim'
 fi
 
-switch() {
-  # Remove both PostgreSQL versions from PATH first
-  export PATH=$(echo $PATH | sed -e 's|/opt/homebrew/opt/postgresql@15/bin:||g' -e 's|/opt/homebrew/opt/postgresql@16/bin:||g')
-
-  if brew services list | grep -q "postgresql@15.*started"; then
-    echo "Switching from PostgreSQL@15 → PostgreSQL@16"
-    brew services stop postgresql@15
-    brew services start postgresql@16
-    export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
-    echo "PostgreSQL@16 is now active and in PATH"
-  elif brew services list | grep -q "postgresql@16.*started"; then
-    echo "Switching from PostgreSQL@16 → PostgreSQL@15"
-    brew services stop postgresql@16
-    brew services start postgresql@15
-    export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
-    echo "PostgreSQL@15 is now active and in PATH"
-  else
-    echo "Neither PostgreSQL@15 nor PostgreSQL@16 is running."
-    echo "Starting PostgreSQL@15 by default..."
-    brew services start postgresql@15
-    export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
-    echo "PostgreSQL@15 is now active and in PATH"
-  fi
-}
-
 # # easier navigation
 setopt auto_cd
 cdpath=($HOME/dev;$HOME/dev/**)
@@ -88,7 +63,6 @@ alias be="bundle exec"
 alias bi="bundle install"
 alias bu="bundle update"
 alias kub=kubectl exec -it deployment/web -- rails c
-alias windsurf="/Applications/Windsurf.app/Contents/MacOS/Electron"
 
 # misc
 # alias ng="./ngrok http 3000"
